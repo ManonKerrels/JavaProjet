@@ -14,11 +14,15 @@ public class Item implements JavaNode{
 
     //Création des méthodes setName/setAction
     public void setName(String name) { this.name = name;}
+
+    @Override
     public void setAction(Callable action) {this.action = action;}
 
 
     //Création des méthodes getName/getAction
     public Callable getAction() {return action;}
+
+    @Override
     public String getName() {return name;}
 
 

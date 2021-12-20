@@ -15,6 +15,11 @@ public class JavaControler implements JavaNode{
     public void setModel(JavaModel javaModel) {this.model = javaModel;}
 
     @Override
+    public void setAction(Callable action) {
+        
+    }
+
+    @Override
     public Callable getAction() {
         return null;
     }
@@ -23,4 +28,6 @@ public class JavaControler implements JavaNode{
     public String getName() {
         return null;
     }
+
+    //try et catch pour choix menu principal
 }

@@ -14,5 +14,7 @@ public class JavaModel {
 
     public String getName() {return this.name;}
 
+    //ajouter méthodes publiques
+
 
 }

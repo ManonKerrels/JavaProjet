@@ -21,6 +21,8 @@ public class JavaVue {
         System.out.println(nameMenu);
         System.out.println("-".repeat(nameMenu.length()));
 
+        //boucle foreach
+        //sous-menu
         return nameMenu;
     }
 
