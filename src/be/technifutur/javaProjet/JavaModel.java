@@ -16,5 +16,18 @@ public class JavaModel {
 
     //ajouter méthodes publiques
 
+    //méthode publique pour vérifier que la position dans le tableau est correcte
+    public JavaNode getJavaNode(int pos){
+        if(pos > javaNodeArrayList.size() || pos < 0){
+            return null;
+        } else {
+            return javaNodeArrayList.get(pos);
+        }
+    }
 
+    //méthode pour avoir la taille du tableau
+    public int getSize() {return javaNodeArrayList.size();}
+
+    //méthode pour ajouter le JavaNode au tableau
+    public void addJavaNode(JavaNode javaNode){javaNodeArrayList.add(javaNode);}
 }
