@@ -18,6 +18,15 @@ public class ProjetFactory {
         return item;
     }
 
+
+    //méthode pour créer le menu
+    public JavaControler createMenu(JavaModel javaModel){
+        JavaControler javaControler = new JavaControler();
+        javaControler.setVue(new JavaVue());
+        javaControler.setModel(javaModel);
+        return javaControler;
+    }
+
     private JavaModel getModelPrincipal(){
 
         return null;

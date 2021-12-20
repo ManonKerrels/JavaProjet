@@ -1,5 +1,7 @@
 package be.technifutur.javaProjet;
 
+import java.util.ArrayList;
+
 public class JavaModel {
 
     //Endroit de stockage
