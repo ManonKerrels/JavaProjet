@@ -1,20 +1,23 @@
 //Attributs et méthodes
-//Get/set Name
 
 
 package be.technifutur.javaProjet;
 
 import java.util.concurrent.Callable;
 
-public class Item {
+public class Item implements JavaNode{
 
+    //Création de 2 attributs
     private String name;
     private Callable action;
 
+
+    //Création des méthodes setName/setAction
     public void setName(String name) { this.name = name;}
     public void setAction(Callable action) {this.action = action;}
 
 
+    //Création des méthodes getName/getAction
     public Callable getAction() {return action;}
     public String getName() {return name;}
 

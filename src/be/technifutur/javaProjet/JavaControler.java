@@ -4,7 +4,9 @@
 
 package be.technifutur.javaProjet;
 
-public class JavaControler {
+import java.util.concurrent.Callable;
+
+public class JavaControler implements JavaNode{
     private JavaVue vue;
     private JavaModel model;
 
@@ -12,4 +14,13 @@ public class JavaControler {
     public void setVue(JavaVue javaVue) {this.vue = javaVue;}
     public void setModel(JavaModel javaModel) {this.model = javaModel;}
 
+    @Override
+    public Callable getAction() {
+        return null;
+    }
+
+    @Override
+    public String getName() {
+        return null;
+    }
 }

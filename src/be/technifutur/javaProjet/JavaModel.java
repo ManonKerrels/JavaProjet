@@ -6,11 +6,11 @@ package be.technifutur.javaProjet;
 import java.util.ArrayList;
 
 public class JavaModel {
-
+    //attributs privés
+    private ArrayList<JavaNode> javaNodeArrayList = new ArrayList<>();
     private String name;
 
-    public JavaModel(String menu_principal) {
-    }
+    public JavaModel(String menu_principal) {this.name = name;}
 
     public String getName() {return this.name;}
 
