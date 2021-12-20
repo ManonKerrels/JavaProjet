@@ -19,13 +19,15 @@ public class ProjetFactory {
 
 
     //méthode pour créer un menu
-    // Appel au JavaControler
     public JavaControler createMenu(JavaModel javaModel){
-        JavaControler javaControler = new JavaControler();
+        JavaControler javaControler = new JavaControler(); // Appel au JavaControler
         javaControler.setVue(new JavaVue());
         javaControler.setModel(javaModel);
         return javaControler;
     }
+
+    //création de l'Item permettant de quitter
+    public Item getItemQuitter() {return createItem("Quitter", null);}
 
     //méthode pour le menu principal
     public JavaModel getMenuPrincipal(){
