@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 public class Main {
     public static void main(String[] args) throws Exception {
         ProjetFactory projetFactory = new ProjetFactory();
-        JavaControler javaControler = new JavaControler();
+        JavaControler javaControler = projetFactory.getControllerPrincipal();
         Callable action;
         action = javaControler.getAction();
 

@@ -37,6 +37,12 @@ public class ProjetFactory {
         return javaModel;
     }
 
+    public JavaControler getControllerPrincipal() {
+        JavaModel menuPrincipal = getMenuPrincipal();
+        JavaControler javaControler = createMenu(menuPrincipal);
+        return javaControler;
+    }
+
 
     //Appel au sous-menu
 

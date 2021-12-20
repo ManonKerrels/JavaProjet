@@ -16,7 +16,7 @@ public class JavaControler implements JavaNode{
 
     @Override
     public Callable setAction(Callable action) {
-        return null;
+        return action;
     }
 
     @Override
@@ -30,14 +30,14 @@ public class JavaControler implements JavaNode{
             String input = vue.saisirMenu(model);
             try {
                 choix = Integer.parseInt(input) - 1; //transformation du choix en position
-                JavaNode javaNodeChoisi = model.getJavaNode(choix); //on va dans JavaModel pour obtenir la méthode getJavaNode afin de vérifier que la position est possible
+                JavaNode nodeChoisi = model.getJavaNode(choix); //on va dans JavaModel pour obtenir la méthode getJavaNode afin de vérifier que la position est possible
 
                 if(choix >= 0 && choix < model.getSize()){
                     saisie = true;
                     JavaNode javaNode = model.getJavaNode(choix); //si choix correct, on va dans JavaModel pour récupérer la méthode JavaNode
                     result = javaNode.getAction(); //notre bon résultat nous permet de lancer l'action
                 } else {
-                    vue.setError("L'option "+(choix+1)+" b'est pas disponible."); //message d'erreur si l'option n'est pas possible
+                    vue.setError("L'option "+(choix+1)+" n'est pas disponible."); //message d'erreur si l'option n'est pas possible
                 }
             } catch (NumberFormatException e){
                 vue.setError((choix+1)+" n'est pas un nombre vous permettant d'accéder à une option.");

@@ -10,7 +10,7 @@ public class JavaModel {
     private ArrayList<JavaNode> javaNodeArrayList = new ArrayList<>();
     private String name;
 
-    public JavaModel(String menu_principal) {this.name = name;}
+    public JavaModel(String name) {this.name = name;}
 
     public String getName() {return this.name;}
 
