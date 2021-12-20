@@ -5,9 +5,8 @@ public class ActivityType {
     public String name;
     private boolean registration;
 
-
     //constructeur qui instancient les 2 attributs
-    public ActivityType(String name, boolean registration){
+    public ActivityType(String name, boolean registration) {
         this.name = name;
         this.registration = registration;
     }
@@ -16,7 +15,9 @@ public class ActivityType {
 
     public boolean isRegistrationRequired() {return registration;}
 
-    public void setName(String name) {this.name = name;}
+    public void setName() {this.name = name;}
 
     public void setRegistration(boolean registration) {this.registration = registration;}
+
+
 }

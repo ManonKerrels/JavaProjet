@@ -1,17 +1,25 @@
 package be.technifutur.javaProjet.activités;
 
-import be.technifutur.javaProjet.activités.ActivityType;
+import java.util.Map;
+import java.util.TreeMap;
 
-public class ListActivity {
+public class ListActivity{
+
+    Map<String, ActivityType> map = new TreeMap<>();
+
     public ActivityType addActivityType(String name, boolean registrationRequired){
-        return null;
+        ActivityType activityType = new ActivityType(name, registrationRequired);
+        map.put(activityType.getName(), activityType);
+        activityType.setName();
+        activityType.isRegistrationRequired();
+        return activityType;
     }
 
-    public ActivityType get(String name){
-        return null;
+    public ActivityType getName(String name){
+        return map.get(name);
     }
 
     public ActivityType remove(String name){
-        return null;
+        return map.get(name);
     }
 }
