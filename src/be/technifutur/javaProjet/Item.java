@@ -16,7 +16,9 @@ public class Item implements JavaNode{
     public void setName(String name) { this.name = name;}
 
     @Override
-    public void setAction(Callable action) {this.action = action;}
+    public Callable setAction(Callable action) {this.action = action;
+        return action;
+    }
 
 
     //Création des méthodes getName/getAction
