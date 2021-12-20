@@ -1,14 +1,13 @@
+//Choix principal (1. Gestion d'activité, 2. Quitter)
+//Gérer les activités (1. créer une activité, 2. supprimer une activité)
+//Gérer créer une activité (1. Encoder nom d'activité, 2. Demande O-N pour s'inscrire)
+
+
 package be.technifutur.javaProjet;
 
 import java.util.concurrent.Callable;
 
 public class ProjetFactory {
-
-    //Appel au JavaControler
-
-    //Choix principal (1. Gestion d'activité, 2. Quitter)
-    //Gérer les activités (1. créer une activité, 2. supprimer une activité)
-    //Gérer créer une activité (1. Encoder nom d'activité, 2. Demande O-N pour s'inscrire)
 
     //fonction utilitaire pour créer des Items
     private Item createItem(String name, Callable action){
@@ -19,7 +18,8 @@ public class ProjetFactory {
     }
 
 
-    //méthode pour créer le menu
+    //méthode pour créer un menu
+    // Appel au JavaControler
     public JavaControler createMenu(JavaModel javaModel){
         JavaControler javaControler = new JavaControler();
         javaControler.setVue(new JavaVue());
@@ -27,9 +27,12 @@ public class ProjetFactory {
         return javaControler;
     }
 
-    private JavaModel getModelPrincipal(){
-
-        return null;
+    //méthode pour le menu principal
+    public JavaModel getMenuPrincipal(){
+        JavaModel javaModel = new JavaModel("Menu principal : ");
+        //lien vers Item choix secondaire
+        //lien vers Item quitter menu
+        return javaModel;
     }
 
 

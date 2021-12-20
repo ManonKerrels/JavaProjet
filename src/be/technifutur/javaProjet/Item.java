@@ -1,3 +1,7 @@
+//Attributs et méthodes
+//Get/set Name
+
+
 package be.technifutur.javaProjet;
 
 import java.util.concurrent.Callable;
@@ -14,7 +18,5 @@ public class Item {
     public Callable getAction() {return action;}
     public String getName() {return name;}
 
-    //Attributs et méthodes
-    //Get/set Name
 
 }

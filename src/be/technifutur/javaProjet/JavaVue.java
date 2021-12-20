@@ -1,12 +1,12 @@
+//Affichage Choix principal
+//Affichage choix secondaire
+//Affichage message d'erreur
+
 package be.technifutur.javaProjet;
 
 import java.util.Scanner;
 
 public class JavaVue {
-
-    //Affichage Choix principal
-    //Affichage choix secondaire
-    //Affichage message d'erreur
 
     //attributs privés pointant sur System.in
     private Scanner input = new Scanner(System.in);
