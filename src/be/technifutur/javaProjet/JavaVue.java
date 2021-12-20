@@ -21,9 +21,17 @@ public class JavaVue {
         System.out.println(nameMenu);
         System.out.println("-".repeat(nameMenu.length()));
 
-        //boucle foreach
-        //sous-menu
-        return nameMenu;
+        for(int i=0; i < model.getSize(); i++){ //pour l'ensemble du tableau contenant les sous-menus
+            System.out.println((i+1)+". "+model.getJavaNode(i).getName()); //affichage des éléments de ce sous-menu
+        }
+
+        if(this.error != null){
+            System.out.println("Il y a une erreur : "+error); //si une erreur est présente, on va afficher de quel type
+        }
+        System.out.println("Choisissez ce que vous désirez effectuer dans ce menu : ");
+        String choix = input.nextLine(); //le choix est saisi grâce à un Scanner
+        return choix; //on retourne ce choix
+
     }
 
 

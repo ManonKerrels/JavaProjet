@@ -16,6 +16,11 @@ public class JavaControler implements JavaNode{
 
     @Override
     public Callable setAction(Callable action) {
+        return null;
+    }
+
+    @Override
+    public Callable getAction() {
         Callable result = null; //result pour le getAction de JavaNode
         boolean saisie = false; //booléen qui est d'office en false (on part du principe qu'il faut vérifier si l'action sera vraie ou pas)
         vue.setError(null); //en cas d'erreur, on fait appel au message dans JavaVue
@@ -40,19 +45,9 @@ public class JavaControler implements JavaNode{
         } while(saisie == false);
         vue.setError(null);
         return result;
-
     }
 
     @Override
-    public Callable getAction() {
+    public String getName() {return model.getName();} //récupérer le nom du getName venant du JavaModel
 
-        return getAction();
-    }
-
-    @Override
-    public String getName() {
-        return getName();
-    }
-
-    //try et catch pour choix menu principal
 }
