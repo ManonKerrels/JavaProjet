@@ -39,6 +39,7 @@ public class ProjetFactory {
 
     public JavaModel getMenuSecondaire(){
         JavaModel javaModel = new JavaModel("Gestion des stages"); //création d'un menu secondaire avec sous-options
+        //javaModel.addJavaNode(getItemActivityType());
         return javaModel;
     }
 

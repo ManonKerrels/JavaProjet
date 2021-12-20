@@ -4,11 +4,14 @@
 
 package be.technifutur.javaProjet;
 
+import be.technifutur.javaProjet.activités.ActivityType;
+
 import java.util.concurrent.Callable;
 
 public class JavaControler implements JavaNode{
     private JavaVue vue;
     private JavaModel model;
+    private ActivityType activityType;
 
     //2 accesseurs publics pour JavaVue et JavaModel
     public void setVue(JavaVue javaVue) {this.vue = javaVue;}
