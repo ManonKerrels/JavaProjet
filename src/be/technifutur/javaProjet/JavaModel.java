@@ -14,8 +14,6 @@ public class JavaModel {
 
     public String getName() {return this.name;}
 
-    //ajouter méthodes publiques
-
     //méthode publique pour vérifier que la position dans le tableau est correcte
     public JavaNode getJavaNode(int pos){
         if(pos > javaNodeArrayList.size() || pos < 0){

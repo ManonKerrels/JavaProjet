@@ -21,8 +21,8 @@ public class ProjetFactory {
     //méthode pour créer un menu
     public JavaControler createMenu(JavaModel javaModel){
         JavaControler javaControler = new JavaControler(); // Appel au JavaControler
-        javaControler.setVue(new JavaVue());
-        javaControler.setModel(javaModel);
+        javaControler.setVue(new JavaVue()); //on met une vue au Controller
+        javaControler.setModel(javaModel); //on met un model au Controller
         return javaControler;
     }
 
@@ -32,20 +32,20 @@ public class ProjetFactory {
     //méthode pour le menu principal
     public JavaModel getMenuPrincipal(){
         JavaModel javaModel = new JavaModel("Menu principal : ");
-        //lien vers Item choix secondaire
-        //lien vers Item quitter menu
+        javaModel.addJavaNode(createMenu(getMenuSecondaire()));
+        javaModel.addJavaNode(getItemQuitter()); //dans le menu principal, option pour quitter
+        return javaModel;
+    }
+
+    public JavaModel getMenuSecondaire(){
+        JavaModel javaModel = new JavaModel("Gestion des stages"); //création d'un menu secondaire avec sous-options
         return javaModel;
     }
 
     public JavaControler getControllerPrincipal() {
-        JavaModel menuPrincipal = getMenuPrincipal();
-        JavaControler javaControler = createMenu(menuPrincipal);
+        JavaModel menuPrincipal = getMenuPrincipal(); //appel à la méthode getMenuPrincipal
+        JavaControler javaControler = createMenu(menuPrincipal); //appel à la méthode précédente pour créer un menu
         return javaControler;
     }
-
-
-    //Appel au sous-menu
-
-    //Appel à la fonction quitter
 
 }
