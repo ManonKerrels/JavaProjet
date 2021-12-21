@@ -1,19 +1,19 @@
 package be.technifutur.javaProjet;
 
-import java.util.concurrent.Callable;
+import be.technifutur.javaProjet.activités.ActivityControler;
+import be.technifutur.javaProjet.activités.ActivityVue;
+import be.technifutur.javaProjet.activités.ListActivity;
 
 public class Main {
-    public static void main(String[] args) throws Exception {
-        ProjetFactory projetFactory = new ProjetFactory();
-        JavaControler javaControler = projetFactory.getControllerPrincipal();
-        Callable action;
-        action = javaControler.getAction();
+    public static void main(String[] args) {
+        ActivityControler activityControler = new ActivityControler();
+        activityControler.setModel(new ListActivity());
+        activityControler.setVue(new ActivityVue());
 
-        if(action != null){
-            action.call();
-        } else {
-            System.out.println("Au revoir !");
+        for(int i = 0; i < 1; i++){
+            activityControler.call();
         }
+
 
     }
 }

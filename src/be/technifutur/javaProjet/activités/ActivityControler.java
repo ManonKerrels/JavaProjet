@@ -1,6 +1,7 @@
 package be.technifutur.javaProjet.activités;
 
-import java.util.ArrayList;
+import be.technifutur.javaProjet.Main;
+
 import java.util.concurrent.Callable;
 
 public class ActivityControler implements Callable {
@@ -8,23 +9,37 @@ public class ActivityControler implements Callable {
     private ListActivity model;
 
     //2 accesseurs publics pour ActivitéVue et ActivitéModel
-    public void setVue(ActivityVue vue) {this.vue = vue;}
-    public void setModel(ListActivity model) {this.model = model;}
+    public void setVue(ActivityVue vue) {
+        this.vue = vue;
+    }
+
+    public void setModel(ListActivity model) {
+        this.model = model;
+    }
 
 
     //méthode qui permet d'ajouter un nom d'activité et vérifie si c'est déjà présent ou pas
-    public ActivityType call () {
+    public ActivityType call() {
         boolean enregistrement = false;
-        String nameActivity = vue.putActivityType();
-        if(model.get(nameActivity) != null){
-            vue.putActivityType();
-        } else {
-            String inscription = vue.inscription();
-            if(inscription.charAt(0) == 'O'){
-                enregistrement = true;
+
+        do {
+            String nameActivity = vue.putActivityType();
+            model.get(nameActivity);
+            if (model.get(nameActivity) != null) {
+                if(nameActivity.equals(vue.putActivityType())){
+                    System.out.println("Cette activité existe déjà dans notre base de données.");
+                }
+                vue.putActivityType();
             }
-        }
-        model.addActivityType(nameActivity, enregistrement);
+
+            String inscription = vue.inscription();
+            if(vue.inscription() != null) {
+                if (inscription.charAt(0) == 'O' || inscription.charAt(0) == 'o') {
+                    enregistrement = true;
+                }
+            }
+            vue.afficherType(model.addActivityType(nameActivity, enregistrement));
+        } while (!enregistrement);
         return null;
     }
 
