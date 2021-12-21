@@ -20,6 +20,9 @@ public class ListActivity{
     }
 
     public ActivityType remove(String name){
+        ActivityType activityType = map.get(name);
+        map.remove(name);
         return map.get(name);
     }
+
 }

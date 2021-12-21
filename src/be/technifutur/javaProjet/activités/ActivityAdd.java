@@ -1,10 +1,8 @@
 package be.technifutur.javaProjet.activités;
 
-import be.technifutur.javaProjet.Main;
-
 import java.util.concurrent.Callable;
 
-public class ActivityControler implements Callable {
+public class ActivityAdd implements Callable {
     private ActivityVue vue;
     private ListActivity model;
 
@@ -36,5 +34,7 @@ public class ActivityControler implements Callable {
         vue.afficherType(model.addActivityType(nameActivity, enregistrement));
         return null;
     }
+
+
 
 }
