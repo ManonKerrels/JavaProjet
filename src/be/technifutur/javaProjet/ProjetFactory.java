@@ -5,6 +5,10 @@
 
 package be.technifutur.javaProjet;
 
+import be.technifutur.javaProjet.activités.ActivityAdd;
+import be.technifutur.javaProjet.activités.ActivityType;
+import be.technifutur.javaProjet.activités.ListActivity;
+
 import java.util.concurrent.Callable;
 
 public class ProjetFactory {
@@ -29,9 +33,12 @@ public class ProjetFactory {
     //création de l'Item permettant de quitter
     public Item getItemQuitter() {return createItem("Quitter", null);}
 
+    public Item getItemActivityAdd(){return createItem("Ajouter une activité", null);}
+
     //méthode pour le menu principal
     public JavaModel getMenuPrincipal(){
         JavaModel javaModel = new JavaModel("Menu principal : ");
+        javaModel.addJavaNode(getControllerPrincipal());
         javaModel.addJavaNode(createMenu(getMenuSecondaire()));
         javaModel.addJavaNode(getItemQuitter()); //dans le menu principal, option pour quitter
         return javaModel;
@@ -39,7 +46,7 @@ public class ProjetFactory {
 
     public JavaModel getMenuSecondaire(){
         JavaModel javaModel = new JavaModel("Gestion des stages"); //création d'un menu secondaire avec sous-options
-        //getAfficherActivity
+        javaModel.addJavaNode(getItemActivityAdd());
         //getListActivity
 
         return javaModel;

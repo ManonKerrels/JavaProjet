@@ -19,6 +19,7 @@ public class ActivityType {
 
     public void setRegistration(boolean registration) {this.registration = registration;}
 
+
     @Override
     public String toString() {
         return "ActivityType{" +

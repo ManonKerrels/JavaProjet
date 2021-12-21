@@ -6,7 +6,7 @@ public class ActivityAdd implements Callable {
     private ActivityVue vue;
     private ListActivity model;
 
-    //2 accesseurs publics pour ActivitéVue et ActivitéModel
+    //2 accesseurs publics pour ActivityVue et ActivityModel
     public void setVue(ActivityVue vue) {
         this.vue = vue;
     }

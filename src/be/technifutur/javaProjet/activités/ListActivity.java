@@ -25,4 +25,9 @@ public class ListActivity{
         return map.get(name);
     }
 
+    /*public ActivityType replace(String name){
+        ActivityType activityType = map.get(name);
+        return null;
+    }*/
+
 }
