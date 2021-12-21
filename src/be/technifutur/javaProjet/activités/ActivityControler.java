@@ -19,11 +19,16 @@ public class ActivityControler extends ActivityType{
     //méthode qui permet d'ajouter un nom d'activité et vérifie si c'est déjà présent ou pas
     public Callable addActivityType(Callable action) {
         String nameActivity = vue.putActivityType();
-        if(model.get(nameActivity) == null){
+        if(model.get(nameActivity) != null){
             nameActivity = model.addActivityType();
-            
+            String inscription = vue.inscription();
+
         }
         return action;
+    }
+
+    public Callable inscription(Callable action){
+
     }
 
 }
