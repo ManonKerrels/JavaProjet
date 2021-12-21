@@ -26,6 +26,18 @@ public class ActivityVue {
         return input.nextLine().trim();
     }
 
+    public String replaceActivityType(){
+        System.out.println("Veuillez encoder l'activité que vous désirez modifier : ");
+        String remplacement = input.nextLine().trim();
+        System.out.println("Êtes-vous certain(e) de vouloir remplacer l'activité "+remplacement+" ?");
+        System.out.println("Encodez O pour Oui, et N pour Non.");
+        String choix = input.nextLine();
+        if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o'){
+            System.out.println("L'activité "+remplacement+" a bien été modifiée !");
+        }
+        return input.nextLine().trim();
+    }
+
     public String inscription() { //suite de l'ajout d'activité, demande d'inscription ou non
         System.out.println("Souhaitez-vous créer une inscription pour cette activité ? Encodez O pour oui, et N pour non.");
         String choix = input.nextLine().trim();

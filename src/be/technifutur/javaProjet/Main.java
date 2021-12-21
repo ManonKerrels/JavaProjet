@@ -1,18 +1,22 @@
 package be.technifutur.javaProjet;
 
-import be.technifutur.javaProjet.activités.ActivityAdd;
-import be.technifutur.javaProjet.activités.ActivityRemove;
-import be.technifutur.javaProjet.activités.ActivityVue;
-import be.technifutur.javaProjet.activités.ListActivity;
+import be.technifutur.javaProjet.activités.*;
 
 public class Main {
     public static void main(String[] args) {
         ActivityAdd activityAdd = new ActivityAdd();
-        ActivityRemove activityRemove = new ActivityRemove();
         activityAdd.setModel(new ListActivity());
         activityAdd.setVue(new ActivityVue());
+
+        ActivityRemove activityRemove = new ActivityRemove();
         activityRemove.setModel(new ListActivity());
         activityRemove.setVue(new ActivityVue());
+
+        ActivityReplace activityReplace = new ActivityReplace();
+        activityReplace.setModel(new ListActivity());
+        activityReplace.setVue(new ActivityVue());
+
+
 
         for(int i = 0; i < 2; i++){
             activityAdd.call();

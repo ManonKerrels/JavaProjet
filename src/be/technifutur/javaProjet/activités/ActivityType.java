@@ -17,7 +17,7 @@ public class ActivityType {
 
     public void setName() {this.name = name;}
 
-    public void setRegistration(boolean registration) {this.registration = registration;}
+    public void setRegistration(boolean registration) {this.registration = registration;} //???
 
 
     @Override
