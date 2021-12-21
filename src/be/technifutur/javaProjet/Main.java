@@ -10,7 +10,7 @@ public class Main {
         activityControler.setModel(new ListActivity());
         activityControler.setVue(new ActivityVue());
 
-        for(int i = 0; i < 1; i++){
+        for(int i = 0; i < 2; i++){
             activityControler.call();
         }
 

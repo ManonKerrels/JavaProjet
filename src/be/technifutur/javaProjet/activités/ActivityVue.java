@@ -6,14 +6,12 @@ public class ActivityVue {
     private Scanner input = new Scanner(System.in);
     private String error = null;
 
-    public String putActivityType(){
+    public String putActivityType() {
         System.out.println("Veuillez encoder le nom de l'activité choisie : ");
-        if(this.error != null){
-            System.out.println("Il y a une erreur : "+error);
+        if (this.error != null) {
+            System.out.println("Il y a une erreur : " + error);
         }
-        String choix = input.nextLine().trim();
-        System.out.println("Nouvelle activité ajoutée !");
-        return choix;
+        return input.nextLine().trim();
     }
 
     public String inscription(){
@@ -21,6 +19,8 @@ public class ActivityVue {
         String choix = input.nextLine().trim();
         if(choix.charAt(0) == 'O' || choix.charAt(0) == 'o'){
             System.out.println("Vous êtes désormais inscrit(e) à cette activité !");
+        } else {
+            System.out.println("Vous ne vous êtes pas inscrit(e).");
         }
         return choix;
     }

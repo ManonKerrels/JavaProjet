@@ -21,25 +21,19 @@ public class ActivityControler implements Callable {
     //méthode qui permet d'ajouter un nom d'activité et vérifie si c'est déjà présent ou pas
     public ActivityType call() {
         boolean enregistrement = false;
+        String nameActivity = vue.putActivityType();
+        model.get(nameActivity);
 
-        do {
-            String nameActivity = vue.putActivityType();
-            model.get(nameActivity);
-            if (model.get(nameActivity) != null) {
-                if(nameActivity.equals(vue.putActivityType())){
-                    System.out.println("Cette activité existe déjà dans notre base de données.");
-                }
-                vue.putActivityType();
-            }
-
+        if (model.get(nameActivity) == null) { //si l'activité n'existe pas dans la map, on demande si on veut s'inscrire
             String inscription = vue.inscription();
-            if(vue.inscription() != null) {
-                if (inscription.charAt(0) == 'O' || inscription.charAt(0) == 'o') {
-                    enregistrement = true;
-                }
+            if (inscription.charAt(0) == 'O' || inscription.charAt(0) == 'o') {
+                enregistrement = true;
             }
-            vue.afficherType(model.addActivityType(nameActivity, enregistrement));
-        } while (!enregistrement);
+        } else {
+            vue.setError("Cette activité existe déjà dans notre base de données.");
+        }
+
+        vue.afficherType(model.addActivityType(nameActivity, enregistrement));
         return null;
     }
 
