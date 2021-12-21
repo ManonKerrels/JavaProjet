@@ -15,7 +15,7 @@ public class ListActivity{
         return activityType;
     }
 
-    public ActivityType getName(String name){
+    public ActivityType get(String name){
         return map.get(name);
     }
 

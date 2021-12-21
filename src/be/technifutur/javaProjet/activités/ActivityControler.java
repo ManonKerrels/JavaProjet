@@ -1,5 +1,6 @@
 package be.technifutur.javaProjet.activités;
 
+import java.util.ArrayList;
 import java.util.concurrent.Callable;
 
 public class ActivityControler extends ActivityType{
@@ -14,6 +15,15 @@ public class ActivityControler extends ActivityType{
     public void setVue(ActivityVue vue) {this.vue = vue;}
     public void setModel(ListActivity model) {this.model = model;}
 
-    public Callable addActivityType(Callable action) {return action;}
+
+    //méthode qui permet d'ajouter un nom d'activité et vérifie si c'est déjà présent ou pas
+    public Callable addActivityType(Callable action) {
+        String nameActivity = vue.putActivityType();
+        if(model.get(nameActivity) == null){
+            nameActivity = model.addActivityType();
+            
+        }
+        return action;
+    }
 
 }
