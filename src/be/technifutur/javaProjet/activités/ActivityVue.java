@@ -26,19 +26,19 @@ public class ActivityVue {
         return input.nextLine().trim();
     }
 
-    public String replaceActivityType(){
+    public String replaceActivityType(){ //nom de la nouvelle activité dans ActivityReplace
         System.out.printf("Veuillez afficher le nouveau nom à encoder : ");
         String newValue = input.nextLine();
         return newValue.trim();
     }
 
-    public String oldActivityType(){
+    public String oldActivityType(){ //Vieille activité à modifier dans ActivityReplace
         System.out.println("Veuillez encoder l'activité que vous désirez modifier : ");
         String oldValue = input.nextLine().trim();
         return oldValue;
     }
 
-    public String confirmationActivityType(String oldValue){
+    public String confirmationActivityType(String oldValue){ //confirmation du choix d'activité à modifier dans ActivityReplace
         System.out.println("Êtes-vous certain(e) de vouloir remplacer l'activité "+oldValue+" ?");
         System.out.println("Encodez O pour Oui, et N pour Non.");
         String choix = input.nextLine();
@@ -62,11 +62,11 @@ public class ActivityVue {
 
     public void setError(String error) {
         this.error = error;
-    }
+    } //message en cas d'erreur
 
     public String getError() {return error;}
 
-    public void setInformation(String information) {this.information = information;}
+    public void setInformation(String information) {this.information = information;} //message en cas d'information
 
     public String getInformation() {return information;}
 

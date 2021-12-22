@@ -1,3 +1,5 @@
+//Normalement, il faut nettoyer son main et mettre quasi tout dans la Factory
+
 package be.technifutur.javaProjet;
 
 import be.technifutur.javaProjet.activités.*;
@@ -6,7 +8,7 @@ import be.technifutur.laboJava.serialization.DataStore;
 public class Main{
 
     public static void main(String[] args) throws Exception{
-        DataStore<ListActivity> myDataStore = new DataStore<>("test.ser", ListActivity::new);
+        DataStore<ListActivity> myDataStore = new DataStore<>("test.ser", ListActivity::new); //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
         ListActivity listActivity = myDataStore.getData();
         System.out.println(listActivity.map);
 
@@ -29,7 +31,7 @@ public class Main{
         if (activityReplace.getVue().getError() != null){ //on affiche l'erreur s'il y en a une
             System.out.println(activityReplace.getVue().getError());
         }
-        if (activityReplace.getVue().getInformation() != null){
+        if (activityReplace.getVue().getInformation() != null){ //on affiche une information spécifique s'il y en a une
             System.out.println(activityReplace.getVue().getInformation());
         }
 
@@ -39,7 +41,7 @@ public class Main{
         for (int i = 0; i < 1; i++){
             activityReplace.call();
         }
-        if (activityReplace.getVue().getError() != null){ //on affiche l'erreur s'il y en a une
+        if (activityReplace.getVue().getError() != null){ //idem au-dessus
             System.out.println(activityReplace.getVue().getError());
         }
         if (activityReplace.getVue().getInformation() != null){
