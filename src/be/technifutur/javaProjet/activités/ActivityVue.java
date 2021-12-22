@@ -1,16 +1,16 @@
 package be.technifutur.javaProjet.activités;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class ActivityVue {
     private Scanner input = new Scanner(System.in);
     private String error = null;
+    private String information = null;
+
 
     public String putActivityType() { //ajout d'une activité
         System.out.println("Veuillez encoder le nom de l'activité choisie : ");
-        if (this.error != null) {
-            System.out.println("Il y a une erreur : " + error);
-        }
         return input.nextLine().trim();
     }
 
@@ -27,24 +27,23 @@ public class ActivityVue {
     }
 
     public String replaceActivityType(){
+        System.out.printf("Veuillez afficher le nouveau nom à encoder : ");
+        String newValue = input.nextLine();
+        return newValue.trim();
+    }
+
+    public String oldActivityType(){
         System.out.println("Veuillez encoder l'activité que vous désirez modifier : ");
         String oldValue = input.nextLine().trim();
+        return oldValue;
+    }
+
+    public String confirmationActivityType(String oldValue){
         System.out.println("Êtes-vous certain(e) de vouloir remplacer l'activité "+oldValue+" ?");
         System.out.println("Encodez O pour Oui, et N pour Non.");
         String choix = input.nextLine();
-        System.out.printf("Veuillez afficher le nouveau nom à encoder : ");
-        String newValue = input.nextLine();
-
-        if(oldValue.equals(newValue)){
-            System.out.printf("Les noms que vous avez encodés sont les mêmes !");
-        } else{
-            if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o'){
-                System.out.println("L'activité "+oldValue+" a bien été modifiée en "+newValue+" !");
-            }
-        }
-        return input.nextLine().trim();
+        return choix;
     }
-
 
     public String inscription() { //suite de l'ajout d'activité, demande d'inscription ou non
         System.out.println("Souhaitez-vous créer une inscription pour cette activité ? Encodez O pour oui, et N pour non.");
@@ -64,4 +63,11 @@ public class ActivityVue {
     public void setError(String error) {
         this.error = error;
     }
+
+    public String getError() {return error;}
+
+    public void setInformation(String information) {this.information = information;}
+
+    public String getInformation() {return information;}
+
 }

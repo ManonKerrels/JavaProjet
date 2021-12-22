@@ -1,17 +1,16 @@
 package be.technifutur.javaProjet.activités;
 
+import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class ListActivity{
+public class ListActivity implements Serializable {
 
-    Map<String, ActivityType> map = new TreeMap<>();
+    public Map<String, ActivityType> map = new TreeMap<>();
 
     public ActivityType addActivityType(String name, boolean registrationRequired){
         ActivityType activityType = new ActivityType(name, registrationRequired);
         map.put(activityType.getName(), activityType);
-        activityType.setName();
-        activityType.isRegistrationRequired();
         return activityType;
     }
 
@@ -20,9 +19,7 @@ public class ListActivity{
     }
 
     public ActivityType remove(String name){
-        ActivityType activityType = map.get(name);
-        map.remove(name);
-        return map.get(name);
+        return map.remove(name);
     }
 
 }

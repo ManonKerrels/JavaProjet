@@ -1,6 +1,8 @@
 package be.technifutur.javaProjet.activités;
 
-public class ActivityType {
+import java.io.Serializable;
+
+public class ActivityType implements Serializable {
     //2 attributs (un public et un privé)
     public String name;
     private boolean registration;
@@ -15,7 +17,7 @@ public class ActivityType {
 
     public boolean isRegistrationRequired() {return registration;}
 
-    public void setName() {this.name = name;}
+    public void setName(String name) {this.name = name;}
 
     public void setRegistration(boolean registration) {this.registration = registration;} //???
 

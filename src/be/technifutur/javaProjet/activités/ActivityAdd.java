@@ -19,6 +19,7 @@ public class ActivityAdd implements Callable {
     //méthode qui permet d'ajouter un nom d'activité et vérifie si c'est déjà présent ou pas
     public ActivityType call() {
         boolean enregistrement = false;
+        vue.setError(null);
         String nameActivity = vue.putActivityType();
         model.get(nameActivity);
 
