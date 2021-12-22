@@ -3,7 +3,7 @@ package be.technifutur.javaProjet;
 import be.technifutur.javaProjet.activités.*;
 
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         ActivityAdd activityAdd = new ActivityAdd();
         activityAdd.setModel(new ListActivity());
         activityAdd.setVue(new ActivityVue());
@@ -23,7 +23,7 @@ public class Main {
         }
 
         for (int i = 0; i < 1; i++){
-            activityRemove.call();
+            activityReplace.call();
         }
 
     }
