@@ -34,11 +34,17 @@ public class ActivityVue {
         String choix = input.nextLine();
         System.out.printf("Veuillez afficher le nouveau nom à encoder : ");
         String newValue = input.nextLine();
-        if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o'){
-            System.out.println("L'activité "+oldValue+" a bien été modifiée en "+newValue+" !");
+
+        if(oldValue.equals(newValue)){
+            System.out.printf("Les noms que vous avez encodés sont les mêmes !");
+        } else{
+            if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o'){
+                System.out.println("L'activité "+oldValue+" a bien été modifiée en "+newValue+" !");
+            }
         }
         return input.nextLine().trim();
     }
+
 
     public String inscription() { //suite de l'ajout d'activité, demande d'inscription ou non
         System.out.println("Souhaitez-vous créer une inscription pour cette activité ? Encodez O pour oui, et N pour non.");

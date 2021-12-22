@@ -10,6 +10,7 @@ public class ActivityReplace implements Callable {
     public void setVue(ActivityVue vue) {
         this.vue = vue;
     }
+
     public void setModel(ListActivity model) {
         this.model = model;
     }
@@ -18,16 +19,13 @@ public class ActivityReplace implements Callable {
     //méthode call qui permet d'appeler la fonction de remplacement
     @Override
     public Object call() throws Exception {
+        String oldValue;
         String newValue = null;
-        String oldValue = vue.replaceActivityType();
         boolean change = false;
 
-        if (oldValue != newValue){
-            change = true;
-            newValue = oldValue;
-        }
+        oldValue = vue.replaceActivityType();
         if (oldValue.equals(newValue)){
-            vue.setError("Idem");
+            change = true;
         }
         return null;
     }
