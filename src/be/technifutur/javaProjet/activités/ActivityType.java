@@ -19,7 +19,7 @@ public class ActivityType implements Serializable {
 
     public void setName(String name) {this.name = name;}
 
-    public void setRegistration(boolean registration) {this.registration = registration;} //???
+    public void setRegistration(boolean registration) {this.registration = registration;}
 
 
     @Override
