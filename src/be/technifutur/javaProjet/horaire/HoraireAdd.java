@@ -8,7 +8,7 @@ public class HoraireAdd {
     public void setVue(HoraireVue vue) {this.vue = vue;}
     public void setModel(HoraireModele model) {this.model = model;}
 
-    public HoraireType call(){
+    public Stage call(){
         boolean enregistrement = false;
         vue.setError(null);
         String nameHoraire = vue.putHoraireType();

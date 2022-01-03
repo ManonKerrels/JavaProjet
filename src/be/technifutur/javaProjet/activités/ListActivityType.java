@@ -6,7 +6,7 @@ import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
 
-public class ListActivity implements Serializable {
+public class ListActivityType implements Serializable {
 
     public Map<String, ActivityType> map = new TreeMap<>();
 

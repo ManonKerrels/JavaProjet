@@ -5,11 +5,11 @@ import java.util.concurrent.Callable;
 public class ActivityRemove implements Callable {
     //attributs qui permettent de donner une vue et un modèle
     private ActivityVue vue;
-    private ListActivity model;
+    private ListActivityType model;
 
     public void setVue(ActivityVue vue) {this.vue = vue;}
 
-    public void setModel(ListActivity model) {this.model = model;}
+    public void setModel(ListActivityType model) {this.model = model;}
 
 
     //méthode call qui permet d'appeler la fonction pour enlever

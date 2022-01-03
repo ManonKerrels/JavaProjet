@@ -8,8 +8,8 @@ import be.technifutur.laboJava.serialization.DataStore;
 public class Main{
 
     public static void main(String[] args) throws Exception{
-        DataStore<ListActivity> myDataStore = new DataStore<>("test.ser", ListActivity::new); //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
-        ListActivity listActivity = myDataStore.getData();
+        DataStore<ListActivityType> myDataStore = new DataStore<>("test.ser", ListActivityType::new); //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
+        ListActivityType listActivity = myDataStore.getData();
         System.out.println(listActivity.map);
 
 

@@ -6,14 +6,14 @@ import java.util.concurrent.Callable;
 
 public class ActivityAdd implements Callable {
     private ActivityVue vue;
-    private ListActivity model;
+    private ListActivityType model;
 
     //2 accesseurs publics pour ActivityVue et ActivityModel
     public void setVue(ActivityVue vue) {
         this.vue = vue;
     }
 
-    public void setModel(ListActivity model) {
+    public void setModel(ListActivityType model) {
         this.model = model;
     }
 

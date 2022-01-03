@@ -5,11 +5,6 @@
 
 package be.technifutur.javaProjet;
 
-import be.technifutur.javaProjet.activités.ActivityAdd;
-import be.technifutur.javaProjet.activités.ActivityType;
-import be.technifutur.javaProjet.activités.ListActivity;
-import be.technifutur.laboJava.serialization.DataStore;
-
 import java.util.concurrent.Callable;
 
 public class ProjetFactory{
