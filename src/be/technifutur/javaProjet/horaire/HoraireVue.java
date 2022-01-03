@@ -1,6 +1,5 @@
 package be.technifutur.javaProjet.horaire;
 
-import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class HoraireVue {
@@ -12,36 +11,30 @@ public class HoraireVue {
     public void setError(String error) {this.error = error;}
     public String getError() {return error;}
 
-    public void setInformation(String information) {this.information = information;}
-    public String getInformation() {return information;}
+    /*public void setInformation(String information) {this.information = information;}
+    public String getInformation() {return information;}*/
 
     public String getName() {
         System.out.println("À quelle activité souhaitez-vous ajouter un horaire ?");
-        String name = input.nextLine().trim();
-        return name;
+        return input.nextLine().trim();
+    }
+
+    public String getActivityType(){
+        System.out.println("Quel type d'activité voulez-vous encoder sous ce nom ?");
+        return input.nextLine().trim();
+        //enregistrer les réponses dans la Map
     }
 
     public String getStart(){
         System.out.println("À quelle date et quelle heure souhaitez-vous encoder le début de votre activité ?");
-        String name = input.nextLine();
-        return name;
+        return input.nextLine();
+        //enregistrer les réponses dans la Map
     }
 
     public String getEnd(){
         System.out.println("Quels seraient le jour et l'heure de fin de votre activité ?");
-        String name = input.nextLine();
-        return name;
-    }
-
-    public String confirmation(){
-        System.out.println("Souhaitez-vous encoder cette plage-horaire ?");
-        String choix = input.nextLine().trim();
-        if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o') {
-            System.out.println("Vous êtes désormais inscrit(e) à cette activité !");
-        } else {
-            System.out.println("Vous ne vous êtes pas inscrit(e).");
-        }
-        return choix;
+        return input.nextLine();
+        //enregistrer les réponses dans la Map
     }
 
 

@@ -27,17 +27,13 @@ public class HoraireAdd {
         model.get(name);
 
         if(model.get(name) != null){
-            String confirmation = vue.confirmation();
-            if (confirmation.charAt(0) == 'O' || confirmation.charAt(0) == 'o') {
-                enregistrement = true;
-            }
+            vue.getActivityType();
         } else{
             vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer dans nos données.");
         }
 
         start = LocalDateTime.parse(vue.getStart());
         end = LocalDateTime.parse(vue.getEnd());
-        vue.confirmation();
 
         return null;
     }

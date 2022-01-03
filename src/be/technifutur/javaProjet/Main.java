@@ -3,6 +3,9 @@
 package be.technifutur.javaProjet;
 
 import be.technifutur.javaProjet.activités.*;
+import be.technifutur.javaProjet.horaire.Horaire;
+import be.technifutur.javaProjet.horaire.HoraireAdd;
+import be.technifutur.javaProjet.horaire.HoraireVue;
 import be.technifutur.laboJava.serialization.DataStore;
 
 public class Main{
@@ -25,6 +28,10 @@ public class Main{
         activityReplace.setModel(listActivity);
         activityReplace.setVue(new ActivityVue());
 
+        HoraireAdd horaireAdd = new HoraireAdd();
+        horaireAdd.setModel(new Horaire());
+        horaireAdd.setVue(new HoraireVue());
+
 
         for(int i = 0; i < 2; i++){
             activityAdd.call();
@@ -39,7 +46,7 @@ public class Main{
 
 
 
-       for (int i = 0; i < 1; i++){
+       /*for (int i = 0; i < 1; i++){
             activityReplace.call();
         }
         if (activityReplace.getVue().getError() != null){ //idem au-dessus
@@ -47,7 +54,7 @@ public class Main{
         }
         if (activityReplace.getVue().getInformation() != null){
             System.out.println(activityReplace.getVue().getInformation());
-        }
+        }*/
 
         myDataStore.save();
     }
