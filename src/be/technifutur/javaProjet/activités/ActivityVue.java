@@ -70,4 +70,5 @@ public class ActivityVue {
 
     public String getInformation() {return information;}
 
+
 }
