@@ -1,20 +1,45 @@
+//Controler pour ajouter une nouvelle activité à l'horaire
+
 package be.technifutur.javaProjet.horaire;
+
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 public class HoraireAdd {
 
+
+    String name;
+    String input;
+    LocalDateTime start = LocalDateTime.now();
+    LocalDateTime end = LocalDateTime.now();
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy");
+    String formattedDate = formatter.format(formatter);
+
     private HoraireVue vue;
-    private HoraireModele model;
+    private Horaire model;
 
     public void setVue(HoraireVue vue) {this.vue = vue;}
-    public void setModel(HoraireModele model) {this.model = model;}
+    public void setModel(Horaire model) {this.model = model;}
 
     public Stage call(){
         boolean enregistrement = false;
         vue.setError(null);
-        String nameHoraire = vue.putHoraireType();
-        model.get(nameHoraire);
+        input = vue.getName();
+        model.get(name);
+
+        if(model.get(name) != null){
+            String confirmation = vue.confirmation();
+            if (confirmation.charAt(0) == 'O' || confirmation.charAt(0) == 'o') {
+                enregistrement = true;
+            }
+        } else{
+            vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer dans nos données.");
+        }
+
+        vue.getStart();
 
 
         return null;
     }
+
 }

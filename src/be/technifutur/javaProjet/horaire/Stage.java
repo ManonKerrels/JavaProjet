@@ -1,3 +1,5 @@
+//modèle, un peu comme ActivityType (correspond à "Activity" dans le sprint 3)
+
 package be.technifutur.javaProjet.horaire;
 
 import be.technifutur.javaProjet.activités.ActivityType;
@@ -7,14 +9,14 @@ import java.time.LocalDateTime;
 
 public class Stage implements Serializable {
 
-    //4 attributes des stages
+    //4 attributs des stages
     public LocalDateTime start;
     public LocalDateTime end;
     public String name;
     public ActivityType type;
 
 
-    //constructeurs qui instanciatient ces 4 attributs
+    //constructeurs qui instancient ces 4 attributs
     public Stage(LocalDateTime start, LocalDateTime end, String name, ActivityType type){
         this.start = start;
         this.end = end;
