@@ -1,3 +1,5 @@
+//modèle
+
 package be.technifutur.javaProjet.activités;
 
 import java.io.Serializable;

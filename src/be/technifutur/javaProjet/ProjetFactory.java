@@ -12,7 +12,7 @@ import be.technifutur.laboJava.serialization.DataStore;
 
 import java.util.concurrent.Callable;
 
-public class ProjetFactory {
+public class ProjetFactory{
 
     //fonction utilitaire pour créer des Items
     private Item createItem(String name, Callable action){

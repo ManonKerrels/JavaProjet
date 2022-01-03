@@ -4,8 +4,6 @@
 
 package be.technifutur.javaProjet;
 
-import be.technifutur.javaProjet.activités.ActivityType;
-
 import java.util.concurrent.Callable;
 
 public class JavaControler implements JavaNode{
