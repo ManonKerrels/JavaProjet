@@ -3,6 +3,7 @@ package be.technifutur.javaProjet.activités;
 import java.io.Serializable;
 import java.sql.Time;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Map;
 import java.util.TreeMap;
@@ -11,16 +12,20 @@ public class Activity implements Serializable {
 
     public Map<String, ActivityType> map = new TreeMap<>();
 
-    public LocalDateTime startActivity(Date date, Time time){
-        Date jour = new Date;
-        Time heure = new Time;
-        map.put(activity);
-        return null;
+    public LocalDateTime startActivity(LocalDateTime startActivity){
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy");
+        String formattedDate = date.format(formatter);
+        LocalDateTime parsedDate = LocalDateTime.parse(formattedDate, formatter);
+        return parsedDate;
     }
 
-    public LocalDateTime endActivity(Date date, Time time){
-
-        return null;
+    public LocalDateTime endActivity(LocalDateTime endActivity){
+        LocalDateTime date = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy");
+        String formattedDate = date.format(formatter);
+        LocalDateTime parsedDate = LocalDateTime.parse(formattedDate, formatter);
+        return parsedDate;
     }
 
     public String nameActivity(){
