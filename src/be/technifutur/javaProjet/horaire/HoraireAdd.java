@@ -13,7 +13,6 @@ public class HoraireAdd {
     LocalDateTime start = LocalDateTime.now();
     LocalDateTime end = LocalDateTime.now();
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy");
-    String formattedDate = formatter.format(formatter);
 
     private HoraireVue vue;
     private Horaire model;
@@ -36,8 +35,9 @@ public class HoraireAdd {
             vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer dans nos données.");
         }
 
-        vue.getStart();
-
+        start = LocalDateTime.parse(vue.getStart());
+        end = LocalDateTime.parse(vue.getEnd());
+        vue.confirmation();
 
         return null;
     }

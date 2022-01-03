@@ -27,6 +27,12 @@ public class HoraireVue {
         return name;
     }
 
+    public String getEnd(){
+        System.out.println("Quels seraient le jour et l'heure de fin de votre activité ?");
+        String name = input.nextLine();
+        return name;
+    }
+
     public String confirmation(){
         System.out.println("Souhaitez-vous encoder cette plage-horaire ?");
         String choix = input.nextLine().trim();
