@@ -20,8 +20,6 @@ public class ListActivityType implements Serializable {
         return map.get(name);
     }
 
-    public ActivityType remove(String name){
-        return map.remove(name);
-    }
+    public ActivityType remove(String name){return map.remove(name);}
 
 }

@@ -17,6 +17,9 @@ public class HoraireVue {
     /*public void setInformation(String information) {this.information = information;}
     public String getInformation() {return information;}*/
 
+
+
+    //HoraireAdd
     public String getActivityType(){
         System.out.println("Sous quelle activité désirez-vous encoder un horaire ?");
         return input.nextLine().trim();
@@ -46,6 +49,10 @@ public class HoraireVue {
         //System.out.println(activity);
     }
 
+
+
+
+    //HoraireRemove
     public String getRemoveActivity() {
         System.out.println("Veuillez encoder le nom de l'activité dont vous souhaitez supprimer le programme/l'horaire : ");
         return input.nextLine();
@@ -59,5 +66,22 @@ public class HoraireVue {
             System.out.println("L'horaire/le programme de cette activité a bien été supprimé.");
         }
         return choix;
+    }
+
+
+
+
+    //HoraireModified
+    public String getChangement() {
+        System.out.println("Veuillez encoder le nom de l'activité dont vous désirez changer le programme ou l'horaire : ");
+        return input.nextLine();
+    }
+
+    public String choixChangement() {
+        System.out.println("Désirez-vous :");
+        System.out.println("1. Changer le nom du programme de cette activité ?");
+        System.out.println("2. Changer la date et l'heure du début de l'horaire ?");
+        System.out.println("3. Changer la date et l'heure de la fin de l'horaire ?");
+        return input.nextLine();
     }
 }

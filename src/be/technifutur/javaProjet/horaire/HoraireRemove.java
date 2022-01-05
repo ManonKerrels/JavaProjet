@@ -27,7 +27,7 @@ public class HoraireRemove {
                 model.remove(name);
             }
         } else{
-            System.out.println("Cette activité n'existe pas dans notre base de données.");
+            vue.setError("Cette activité n'existe pas dans notre base de données.");
         }
         return null;
     }
