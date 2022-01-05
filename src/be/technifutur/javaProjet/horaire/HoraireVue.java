@@ -84,4 +84,9 @@ public class HoraireVue {
         System.out.println("3. Changer la date et l'heure de la fin de l'horaire ?");
         return input.nextLine();
     }
+
+    public String nameChangement() {
+        System.out.println("Veuillez encoder le nouveau nom de programme : ");
+        return input.nextLine();
+    }
 }

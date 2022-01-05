@@ -30,10 +30,6 @@ public class Horaire implements Serializable {
 
     public void remove(String name) {horaire.remove(name);}
 
-    public void nameChange(String newName) {
-        //horaire.replace(newName);
-    }
-
     public void startChange() {
     }
 

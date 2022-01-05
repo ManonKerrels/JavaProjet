@@ -31,11 +31,15 @@ public class HoraireModified {
         ActivityType type = listActivityType.get(input);
 
         if (type != null){
-            input = vue.choixChangement();
+            vue.choixChangement();
             model.change(type, oldName, start, end);
             switch (choix){
                 case 1:
-                    model.nameChange(oldName);
+                    vue.nameChangement();
+                    if (!oldName.equalsIgnoreCase(newName) && !oldName.isBlank() && !newName.isBlank()){
+                        model.remove(oldName);
+                        //TODO suite du remove
+                    }
                     break;
                 case 2:
                     model.startChange();
