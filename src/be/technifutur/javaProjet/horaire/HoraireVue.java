@@ -18,28 +18,32 @@ public class HoraireVue {
     public String getInformation() {return information;}*/
 
     public String getName() {
-        System.out.println("Quel nom voulez-vous donner ?");
+        System.out.println("Quel nom voulez-vous donner pour cette activité ?");
         return input.nextLine().trim();
     }
 
     public String getActivityType(){
-        System.out.println("Quel type d'activité voulez-vous encoder ?");
+        System.out.println("Sous quelle activité désirez-vous encoder un horaire ?");
         return input.nextLine().trim();
     }
 
     public String getStart(){
-        System.out.println("À quelle date souhaitez-vous encoder le début de votre activité ?");
+        System.out.println("À quelles date et heure souhaitez-vous encoder le début de votre activité ? ");
+        System.out.println("Veuillez encoder sous le format suivant : 12-01-1897 10:0:0 ");
         return input.nextLine();
     }
 
     public String getEnd(){
-        System.out.println("Quel serait le jour de fin de votre activité ?");
+        System.out.println("Quels seraient le jour et l'heure de fin de votre activité ?");
+        System.out.println("Veuillez encoder sous le format suivant : 12-01-1897 12:0:0 ");
         return input.nextLine();
     }
 
 
     public void afficheActivity(Activity activity) {
-        //TODO améliorer code
-        System.out.println(activity);
+        System.out.println("L'activité a reçu dans son horaire le programme "+activity.getName());
+        System.out.println("Ce dernier commence le "+activity.getStart());
+        System.out.println("Et se termine le "+activity.getEnd());
+        //System.out.println(activity);
     }
 }

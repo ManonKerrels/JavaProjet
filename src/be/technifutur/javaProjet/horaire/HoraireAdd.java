@@ -13,7 +13,6 @@ public class HoraireAdd {
     private Horaire model;
     private ListActivityType listActivityType;
 
-    //TODO formatter à modifier
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy H:m:s");
 
     public void setVue(HoraireVue vue) {this.vue = vue;}

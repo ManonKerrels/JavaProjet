@@ -10,13 +10,12 @@ public class ActivityVue {
 
 
     public String putActivityType() { //ajout d'une activité
-        //TODO changer formulation
-        System.out.println("Veuillez encoder le nom de l'activité choisie : ");
+        System.out.println("Veuillez encoder le nom de l'activité que vous désirez ajouter à notre base de données : ");
         return input.nextLine().trim();
     }
 
     public String removeActivityType() { //suppression d'une activité
-        System.out.println("Veuillez encoder le nom de l'activité à retirer : ");
+        System.out.println("Veuillez encoder le nom de l'activité à retirer de notre base de données : ");
         String efface = input.nextLine().trim();
         System.out.println("Êtes-vous certain(e) de vouloir supprimer l'activité " + efface + " ?");
         System.out.println("Encodez O pour Oui, et N pour Non.");
@@ -34,7 +33,7 @@ public class ActivityVue {
     }
 
     public String oldActivityType(){ //Vieille activité à modifier dans ActivityReplace
-        System.out.println("Veuillez encoder l'activité que vous désirez modifier : ");
+        System.out.println("Veuillez encoder l'activité que vous désirez modifier dans notre base de données : ");
         String oldValue = input.nextLine().trim();
         return oldValue;
     }
