@@ -1,18 +1,29 @@
 //modèle qui correspond à peu près à ListActivityType
+//collection et stockage des activités (donner accès aux données) > normalement dans une base de données
+//stocker que des données valides
 
 package be.technifutur.javaProjet.horaire;
 
+import be.technifutur.javaProjet.activités.ActivityAdd;
+import be.technifutur.javaProjet.activités.ActivityType;
+
 import java.io.Serializable;
+import java.time.LocalDateTime;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Horaire implements Serializable {
 
-    public Map<String, Stage> map = new TreeMap<>();
+    private Map<String, Activity> horaire = new TreeMap<>();
 
-    public String get(String name) {
-        return null;
+
+    public Activity get(String name) {
+        return horaire.get(name);
     }
 
 
+    public void add(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
+        Activity activity = new Activity(type, name, start, end);
+        horaire.put(name, activity);
+    }
 }

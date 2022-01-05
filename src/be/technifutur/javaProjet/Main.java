@@ -8,6 +8,7 @@ import be.technifutur.javaProjet.horaire.HoraireAdd;
 import be.technifutur.javaProjet.horaire.HoraireVue;
 import be.technifutur.laboJava.serialization.DataStore;
 
+
 public class Main{
 
     public static void main(String[] args) throws Exception{
@@ -31,10 +32,12 @@ public class Main{
         HoraireAdd horaireAdd = new HoraireAdd();
         horaireAdd.setModel(new Horaire());
         horaireAdd.setVue(new HoraireVue());
+        horaireAdd.setListActivityType(listActivity);
 
 
         for(int i = 0; i < 2; i++){
             activityAdd.call();
+            horaireAdd.call();
         }
         if (activityReplace.getVue().getError() != null){ //on affiche l'erreur s'il y en a une
             System.out.println(activityReplace.getVue().getError());
@@ -42,7 +45,6 @@ public class Main{
         if (activityReplace.getVue().getInformation() != null){ //on affiche une information spécifique s'il y en a une
             System.out.println(activityReplace.getVue().getInformation());
         }
-
 
 
 

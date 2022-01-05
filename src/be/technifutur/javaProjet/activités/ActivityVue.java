@@ -10,6 +10,7 @@ public class ActivityVue {
 
 
     public String putActivityType() { //ajout d'une activité
+        //TODO changer formulation
         System.out.println("Veuillez encoder le nom de l'activité choisie : ");
         return input.nextLine().trim();
     }

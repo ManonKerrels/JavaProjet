@@ -2,38 +2,43 @@
 
 package be.technifutur.javaProjet.horaire;
 
+import be.technifutur.javaProjet.activités.ActivityType;
+import be.technifutur.javaProjet.activités.ListActivityType;
+
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class HoraireAdd {
-
-
-    String name;
-    String input;
-    LocalDateTime start = LocalDateTime.now();
-    LocalDateTime end = LocalDateTime.now();
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-M-yyyy");
-
     private HoraireVue vue;
     private Horaire model;
+    private ListActivityType listActivityType;
+
+    //TODO formatter à modifier
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy H:m:s");
 
     public void setVue(HoraireVue vue) {this.vue = vue;}
     public void setModel(Horaire model) {this.model = model;}
+    public void setListActivityType(ListActivityType listActivityType) {this.listActivityType = listActivityType;}
 
     public Stage call(){
-        boolean enregistrement = false;
+        String name;
+        String input;
+        LocalDateTime start;
+        LocalDateTime end;
         vue.setError(null);
-        input = vue.getName();
-        model.get(name);
+        input = vue.getActivityType();
+        ActivityType type = listActivityType.get(input);
 
-        if(model.get(name) != null){
-            vue.getActivityType();
+        if(type != null){
+            name = vue.getName();
+            start = LocalDateTime.parse(vue.getStart(), formatter);
+            end = LocalDateTime.parse(vue.getEnd(), formatter);
+            model.add(type, name, start, end);
+            vue.afficheActivity(model.get(name));
         } else{
-            vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer dans nos données.");
+            vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer.");
         }
 
-        start = LocalDateTime.parse(vue.getStart());
-        end = LocalDateTime.parse(vue.getEnd());
 
         return null;
     }
