@@ -5,6 +5,7 @@ package be.technifutur.javaProjet;
 import be.technifutur.javaProjet.activités.*;
 import be.technifutur.javaProjet.horaire.Horaire;
 import be.technifutur.javaProjet.horaire.HoraireAdd;
+import be.technifutur.javaProjet.horaire.HoraireRemove;
 import be.technifutur.javaProjet.horaire.HoraireVue;
 import be.technifutur.laboJava.serialization.DataStore;
 
@@ -34,10 +35,16 @@ public class Main{
         horaireAdd.setVue(new HoraireVue());
         horaireAdd.setListActivityType(listActivity);
 
+        HoraireRemove horaireRemove = new HoraireRemove();
+        horaireRemove.setModel(new Horaire());
+        horaireRemove.setVue(new HoraireVue());
+        horaireRemove.setListActivityType(listActivity);
+
 
         for(int i = 0; i < 2; i++){
             activityAdd.call();
             horaireAdd.call();
+            horaireRemove.call();
         }
         if (activityReplace.getVue().getError() != null){ //on affiche l'erreur s'il y en a une
             System.out.println(activityReplace.getVue().getError());

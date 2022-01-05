@@ -17,13 +17,13 @@ public class HoraireVue {
     /*public void setInformation(String information) {this.information = information;}
     public String getInformation() {return information;}*/
 
-    public String getName() {
-        System.out.println("Quel nom voulez-vous donner pour cette activité ?");
+    public String getActivityType(){
+        System.out.println("Sous quelle activité désirez-vous encoder un horaire ?");
         return input.nextLine().trim();
     }
 
-    public String getActivityType(){
-        System.out.println("Sous quelle activité désirez-vous encoder un horaire ?");
+    public String getName() {
+        System.out.println("Quel nom de programme voulez-vous donner pour cette activité ?");
         return input.nextLine().trim();
     }
 
@@ -39,11 +39,25 @@ public class HoraireVue {
         return input.nextLine();
     }
 
-
     public void afficheActivity(Activity activity) {
         System.out.println("L'activité a reçu dans son horaire le programme "+activity.getName());
         System.out.println("Ce dernier commence le "+activity.getStart());
         System.out.println("Et se termine le "+activity.getEnd());
         //System.out.println(activity);
+    }
+
+    public String getRemoveActivity() {
+        System.out.println("Veuillez encoder le nom de l'activité dont vous souhaitez supprimer le programme/l'horaire : ");
+        return input.nextLine();
+    }
+
+    public String getRemoveConfirmation() {
+        System.out.println("Êtes-vous certain(e) de vouloir supprimer l'horaire de cette activité ?");
+        System.out.println("Encodez O pour Oui, et N pour Non.");
+        String choix = input.nextLine();
+        if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o'){
+            System.out.println("L'horaire/le programme de cette activité a bien été supprimé.");
+        }
+        return choix;
     }
 }
