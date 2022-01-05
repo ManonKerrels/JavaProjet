@@ -46,7 +46,7 @@ public class Main{
         for(int i = 0; i < 2; i++){
             activityAdd.call();
             horaireAdd.call();
-            horaireRemove.call();
+            //horaireRemove.call();
             horaireModified.call();
         }
         if (activityReplace.getVue().getError() != null){ //on affiche l'erreur s'il y en a une

@@ -9,6 +9,7 @@ import java.util.TreeMap;
 public class ListActivityType implements Serializable {
 
     public Map<String, ActivityType> map = new TreeMap<>();
+    private String name;
 
     public ActivityType addActivityType(String name, boolean registrationRequired){
         ActivityType activityType = new ActivityType(name, registrationRequired);
@@ -22,4 +23,5 @@ public class ListActivityType implements Serializable {
 
     public ActivityType remove(String name){return map.remove(name);}
 
+    public void setName(String name) {this.name = name;}
 }

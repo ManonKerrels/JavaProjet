@@ -19,34 +19,45 @@ public class HoraireModified {
     public void setListActivityType(ListActivityType listActivityType) {this.listActivityType = listActivityType;}
 
     public Stage call(){
-        String oldName = null;
-        String newName = null;
-        boolean change = false;
         int choix = 0;
+
+        String newName;
+        boolean change = false;
+
         LocalDateTime start = null;
         LocalDateTime end = null;
         vue.setError(null);
+        vue.setInformation(null);
 
         String input = vue.getChangement();
         ActivityType type = listActivityType.get(input);
 
-        if (type != null){
-            vue.choixChangement();
-            model.change(type, oldName, start, end);
+        if (input != null){
+            choix = Integer.parseInt(vue.choixChangement());
             switch (choix){
                 case 1:
-                    vue.nameChangement();
-                    if (!oldName.equalsIgnoreCase(newName) && !oldName.isBlank() && !newName.isBlank()){
-                        model.remove(oldName);
-                        //TODO suite du remove
+                    newName = vue.nameChangement();
+                    if (!input.equalsIgnoreCase(newName) && !input.isBlank() && !newName.isBlank() && change){
+                        model.remove(input);
+                        if (input != null){
+                            listActivityType.setName(newName);
+                            model.add(type, newName, start, end);
+                            //TODO problème: cette phrase ne s'affiche pas
+                            vue.setInformation("Le programme "+input+" a bien été modifié en "+newName);
+                        }
                     }
                     break;
+
                 case 2:
+                    //TODO suite du change (date et heure de début)
                     model.startChange();
                     break;
+
                 case 3:
+                    //TODO suite du change (date et heure de fin)
                     model.endChange();
                     break;
+
                 default: vue.setError("Le choix que vous avez encodé n'est pas disponible.");
             }
         } else{

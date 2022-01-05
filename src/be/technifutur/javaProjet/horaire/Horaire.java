@@ -23,10 +23,10 @@ public class Horaire implements Serializable {
         horaire.put(name, activity);
     }
 
-    public void change(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
+    /*public void change(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
         Activity activity = new Activity(type, name, start, end);
         horaire.replace(name, activity);
-    }
+    }*/
 
     public void remove(String name) {horaire.remove(name);}
 
