@@ -38,7 +38,6 @@ public class HoraireAdd {
             vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer.");
         }
 
-
         return null;
     }
 

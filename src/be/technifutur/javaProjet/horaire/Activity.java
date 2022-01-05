@@ -20,21 +20,10 @@ public class Activity {
         this.end = end;
     }
 
-    public ActivityType getType() {
-        return type;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public LocalDateTime getStart() {
-        return start;
-    }
-
-    public LocalDateTime getEnd() {
-        return end;
-    }
+    //public ActivityType getType() {return type;}
+    public String getName() {return name;}
+    public LocalDateTime getStart() {return start;}
+    public LocalDateTime getEnd() {return end;}
 
     @Override
     public String toString() {
