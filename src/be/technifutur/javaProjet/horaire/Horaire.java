@@ -8,19 +8,24 @@ import be.technifutur.javaProjet.activités.ActivityType;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Locale;
 import java.util.Map;
 import java.util.TreeMap;
 
 public class Horaire implements Serializable {
 
     private Map<String, Activity> horaire = new TreeMap<>();
+    private String name;
 
-    public Activity get(String name) {return horaire.get(name);}
+
+
+    public Activity get(String oldName) {return horaire.get(oldName.toUpperCase());}
+    public void set(String name) {this.name = name;}
 
 
     public void add(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
         Activity activity = new Activity(type, name, start, end);
-        horaire.put(name, activity);
+        horaire.put(name.toUpperCase(), activity);
     }
 
     /*public void change(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
@@ -28,11 +33,13 @@ public class Horaire implements Serializable {
         horaire.replace(name, activity);
     }*/
 
-    public void remove(String name) {horaire.remove(name);}
+    public void remove(String name) {horaire.remove(name.toUpperCase());}
 
     public void startChange() {
     }
 
     public void endChange() {
     }
+
+
 }

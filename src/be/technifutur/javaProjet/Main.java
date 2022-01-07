@@ -12,6 +12,8 @@ public class Main{
     public static void main(String[] args) throws Exception{
         DataStore<ListActivityType> myDataStore = new DataStore<>("test.ser", ListActivityType::new); //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
         ListActivityType listActivity = myDataStore.getData();
+        DataStore<Horaire> dataHoraire = new DataStore<>("horaire.ser", Horaire::new);
+        Horaire horaire = dataHoraire.getData();
         System.out.println(listActivity.map);
 
 
@@ -28,7 +30,7 @@ public class Main{
         activityReplace.setVue(new ActivityVue());
 
         HoraireAdd horaireAdd = new HoraireAdd();
-        horaireAdd.setModel(new Horaire());
+        horaireAdd.setModel(horaire);
         horaireAdd.setVue(new HoraireVue());
         horaireAdd.setListActivityType(listActivity);
 
@@ -38,9 +40,8 @@ public class Main{
         horaireRemove.setListActivityType(listActivity);
 
         HoraireModified horaireModified = new HoraireModified();
-        horaireModified.setModel(new Horaire());
+        horaireModified.setModel(horaire);
         horaireModified.setVue(new HoraireVue());
-        horaireModified.setListActivityType(listActivity);
 
 
         for(int i = 0; i < 2; i++){
@@ -69,5 +70,6 @@ public class Main{
         }*/
 
         myDataStore.save();
+        dataHoraire.save();
     }
 }

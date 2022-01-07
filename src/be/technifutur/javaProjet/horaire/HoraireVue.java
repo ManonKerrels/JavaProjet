@@ -4,14 +4,11 @@ import java.util.Scanner;
 
 public class HoraireVue {
     private Scanner input = new Scanner(System.in);
-    private String error = null;
-    private String information = null;
+    private String error;
+    private String information;
 
 
-    public void setError(String error) {
-        System.out.println(error);
-        this.error = error;
-    }
+    public void setError(String error) {this.error = error;}
     public String getError() {return error;}
 
     public void setInformation(String information) {this.information = information;}
@@ -46,7 +43,7 @@ public class HoraireVue {
         System.out.println("L'activité a reçu dans son horaire le programme "+activity.getName());
         System.out.println("Ce dernier commence le "+activity.getStart());
         System.out.println("Et se termine le "+activity.getEnd());
-        //System.out.println(activity);
+        System.out.println(activity);
     }
 
 
@@ -88,5 +85,16 @@ public class HoraireVue {
     public String nameChangement() {
         System.out.println("Veuillez encoder le nouveau nom de programme : ");
         return input.nextLine();
+    }
+
+    public String inscription() {
+        System.out.println("Souhaitez-vous créer une inscription pour cette activité ? Encodez O pour oui, et N pour non.");
+        String choix = input.nextLine().trim();
+        if (choix.charAt(0) == 'O' || choix.charAt(0) == 'o') {
+            System.out.println("Vous êtes désormais inscrit(e) à cette activité !");
+        } else {
+            System.out.println("Vous ne vous êtes pas inscrit(e).");
+        }
+        return choix;
     }
 }

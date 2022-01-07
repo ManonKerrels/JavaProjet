@@ -20,10 +20,11 @@ public class Activity {
         this.end = end;
     }
 
-    //public ActivityType getType() {return type;}
     public String getName() {return name;}
+    public void setName(String name) {this.name = name;}
     public LocalDateTime getStart() {return start;}
     public LocalDateTime getEnd() {return end;}
+    public ActivityType getType() {return type;}
 
     @Override
     public String toString() {
@@ -34,4 +35,7 @@ public class Activity {
                 ", end=" + end +
                 '}';
     }
+
+
+
 }

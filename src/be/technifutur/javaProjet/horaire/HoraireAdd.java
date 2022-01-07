@@ -7,6 +7,7 @@ import be.technifutur.javaProjet.activités.ListActivityType;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Locale;
 
 public class HoraireAdd {
     private HoraireVue vue;
@@ -33,7 +34,7 @@ public class HoraireAdd {
             start = LocalDateTime.parse(vue.getStart(), formatter);
             end = LocalDateTime.parse(vue.getEnd(), formatter);
             model.add(type, name, start, end);
-            vue.afficheActivity(model.get(name));
+            vue.afficheActivity(model.get(name.toUpperCase()));
         } else{
             vue.setError("Cette activité n'existe pas encore dans notre base de données. Veuillez commencer par l'enregistrer.");
         }
