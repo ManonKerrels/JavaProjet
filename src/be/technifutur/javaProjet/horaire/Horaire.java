@@ -8,7 +8,7 @@ import be.technifutur.javaProjet.activités.ActivityType;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.util.Locale;
+import java.time.chrono.ChronoLocalDateTime;
 import java.util.Map;
 import java.util.TreeMap;
 
@@ -35,7 +35,9 @@ public class Horaire implements Serializable {
 
     public void remove(String name) {horaire.remove(name.toUpperCase());}
 
-    public void startChange() {
+    public CharSequence startChange() {
+        LocalDateTime localDateTime;
+        return null;
     }
 
     public void endChange() {

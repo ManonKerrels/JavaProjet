@@ -16,11 +16,21 @@ public class HoraireModified {
 
     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy H:m:s");
 
-    public void setVue(HoraireVue vue) {this.vue = vue;}
-    public void setModel(Horaire model) {this.model = model;}
+    public void setVue(HoraireVue vue) {
+        this.vue = vue;
+    }
 
-    public void setListActivityType(ListActivityType listActivityType) {this.listActivityType = listActivityType;}
-    public void setActivity(Activity activity) {this.activity = activity;}
+    public void setModel(Horaire model) {
+        this.model = model;
+    }
+
+    public void setListActivityType(ListActivityType listActivityType) {
+        this.listActivityType = listActivityType;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
+    }
 
     public Stage call() {
         int choix = 0;
@@ -28,8 +38,8 @@ public class HoraireModified {
         String input = null;
 
         String newName = null;
-        LocalDateTime newStart;
-        LocalDateTime newEnd;
+        LocalDateTime newStart = null;
+        LocalDateTime newEnd = null;
 
         input = vue.getChangement();
 
@@ -49,24 +59,21 @@ public class HoraireModified {
                     vue.nameChangement();
                     newName = String.valueOf(model.get(input));
 
-                    if (!newName.equals(oldName) && !newName.isBlank() && !newName.isBlank() && change){
+                    if (!newName.equals(oldName) && !newName.isBlank() && !newName.isBlank() && change) {
                         model.set(newName);
-
-                        if (activity != null) {
-                            activity.setName(newName);
-                            boolean inscription = (vue.inscription().equalsIgnoreCase("O")?true:false);
-                            listActivityType.setRegistration(inscription);
-                            vue.afficheActivity(new Activity(type, newName, oldStart, oldEnd));
-                            vue.setInformation("Le programme "+input+" a bien été modifié en "+newName);
-                        }
+                        activity.setName(newName);
+                        boolean inscription = (vue.inscription().equalsIgnoreCase("O") ? true : false);
+                        listActivityType.setRegistration(inscription);
+                        vue.afficheActivity(new Activity(type, newName, oldStart, oldEnd));
                     } else {
                         vue.setError("Les noms que vous avez encodés sont les mêmes.");
                     }
                     break;
 
-                case 2:
-                    //TODO suite du change (date et heure de début)
-                    model.startChange();
+                case 2: //TODO suite du change (date et heure de début)
+                    model.remove(String.valueOf(oldStart));
+                    newStart = LocalDateTime.parse(model.startChange(), formatter);
+
                     break;
 
                 case 3:
