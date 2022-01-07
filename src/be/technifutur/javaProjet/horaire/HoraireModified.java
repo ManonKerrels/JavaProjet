@@ -59,7 +59,7 @@ public class HoraireModified {
                     vue.nameChangement();
                     newName = String.valueOf(model.get(input));
 
-                    if (!newName.equals(oldName) && !newName.isBlank() && !newName.isBlank() && change) {
+                    if (!newName.equals(oldName) && !newName.isBlank() && change) {
                         model.set(newName);
                         activity.setName(newName);
                         boolean inscription = (vue.inscription().equalsIgnoreCase("O") ? true : false);
@@ -72,8 +72,18 @@ public class HoraireModified {
 
                 case 2: //TODO suite du change (date et heure de début)
                     model.remove(String.valueOf(oldStart));
+                    vue.startChangement();
                     newStart = LocalDateTime.parse(model.startChange(), formatter);
 
+                    if (!newStart.equals(oldStart) && change){
+                        model.set(String.valueOf(newStart));
+                        activity.setStart(newStart);
+                        boolean inscription = (vue.inscription().equalsIgnoreCase("O") ? true : false);
+                        listActivityType.setRegistration(inscription);
+                        vue.afficheActivity(new Activity(type, newName, oldStart, oldEnd));
+                    } else{
+                        vue.setError("Les dates que vous avez encodées sont les mêmes.");
+                    }
                     break;
 
                 case 3:

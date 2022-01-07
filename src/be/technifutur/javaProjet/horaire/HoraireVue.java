@@ -97,4 +97,9 @@ public class HoraireVue {
         }
         return choix;
     }
+
+    public String startChangement() {
+        System.out.println("Veuillez encoder les nouvelles date et heure auxquelles vous désirez encoder votre activité : ");
+        return input.nextLine();
+    }
 }

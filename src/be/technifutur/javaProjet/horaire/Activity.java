@@ -22,9 +22,13 @@ public class Activity {
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
+
     public LocalDateTime getStart() {return start;}
+    public void setStart(LocalDateTime start) {this.start = start;}
+
     public LocalDateTime getEnd() {return end;}
     public ActivityType getType() {return type;}
+
 
     @Override
     public String toString() {
@@ -35,7 +39,5 @@ public class Activity {
                 ", end=" + end +
                 '}';
     }
-
-
 
 }
