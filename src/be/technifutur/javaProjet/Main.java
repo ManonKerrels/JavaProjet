@@ -5,6 +5,7 @@ package be.technifutur.javaProjet;
 import be.technifutur.javaProjet.activités.*;
 import be.technifutur.javaProjet.horaire.*;
 import be.technifutur.laboJava.serialization.DataStore;
+import com.sun.jdi.AbsentInformationException;
 
 
 public class Main{
@@ -43,18 +44,17 @@ public class Main{
         horaireModified.setModel(horaire);
         horaireModified.setVue(new HoraireVue());
 
-
-        for(int i = 0; i < 2; i++){
+        try{
             activityAdd.call();
             horaireAdd.call();
             //horaireRemove.call();
             horaireModified.call();
+        }catch (Exception e ){
+            System.out.println(activityReplace.getVue().getError()); //on affiche une erreur s'il y en a une
         }
-        if (activityReplace.getVue().getError() != null){ //on affiche l'erreur s'il y en a une
-            System.out.println(activityReplace.getVue().getError());
-        }
+
         if (activityReplace.getVue().getInformation() != null){ //on affiche une information spécifique s'il y en a une
-            System.out.println(activityReplace.getVue().getInformation());
+            throw new AbsentInformationException("Il y a un problème dans la Matrice...");
         }
 
 
