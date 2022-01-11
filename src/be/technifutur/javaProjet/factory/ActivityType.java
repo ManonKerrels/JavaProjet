@@ -1,6 +1,6 @@
 //modèle
 
-package be.technifutur.javaProjet.activités;
+package be.technifutur.javaProjet.factory;
 
 import java.io.Serializable;
 

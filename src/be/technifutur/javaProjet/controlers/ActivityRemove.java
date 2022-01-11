@@ -1,4 +1,8 @@
-package be.technifutur.javaProjet.activités;
+package be.technifutur.javaProjet.controlers;
+
+import be.technifutur.javaProjet.factory.ActivityType;
+import be.technifutur.javaProjet.vues.ActivityVue;
+import be.technifutur.javaProjet.factory.ListActivityType;
 
 import java.util.concurrent.Callable;
 

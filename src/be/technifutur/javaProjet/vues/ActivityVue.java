@@ -1,6 +1,7 @@
-package be.technifutur.javaProjet.activités;
+package be.technifutur.javaProjet.vues;
 
-import java.util.ArrayList;
+import be.technifutur.javaProjet.factory.ActivityType;
+
 import java.util.Scanner;
 
 public class ActivityVue {

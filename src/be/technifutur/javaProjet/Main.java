@@ -2,10 +2,15 @@
 
 package be.technifutur.javaProjet;
 
-import be.technifutur.javaProjet.activités.*;
-import be.technifutur.javaProjet.horaire.*;
+import be.technifutur.javaProjet.factory.*;
+import be.technifutur.javaProjet.controlers.*;
+import be.technifutur.javaProjet.modeles.*;
+import be.technifutur.javaProjet.vues.ActivityVue;
+import be.technifutur.javaProjet.vues.HoraireVue;
 import be.technifutur.laboJava.serialization.DataStore;
 import com.sun.jdi.AbsentInformationException;
+
+import java.util.concurrent.Callable;
 
 
 public class Main{
@@ -18,7 +23,7 @@ public class Main{
         System.out.println(listActivity.map);
 
 
-        ActivityAdd activityAdd = new ActivityAdd();
+        /*ActivityAdd activityAdd = new ActivityAdd();
         activityAdd.setModel(listActivity);
         activityAdd.setVue(new ActivityVue());
 
@@ -42,20 +47,19 @@ public class Main{
 
         HoraireModified horaireModified = new HoraireModified();
         horaireModified.setModel(horaire);
-        horaireModified.setVue(new HoraireVue());
+        horaireModified.setVue(new HoraireVue());*/
 
         try{
-            activityAdd.call();
-            horaireAdd.call();
-            //horaireRemove.call();
-            horaireModified.call();
-        }catch (Exception e ){
-            System.out.println(activityReplace.getVue().getError()); //on affiche une erreur s'il y en a une
+            ProjetFactory projetFactory = new ProjetFactory();
+            JavaControler toto = projetFactory.getControllerPrincipal();
+            Callable dede = toto.getAction();
+        }catch (Exception e){
+            //System.out.println(activityReplace.getVue().getError()); //on affiche une erreur s'il y en a une
         }
 
-        if (activityReplace.getVue().getInformation() != null){ //on affiche une information spécifique s'il y en a une
+        /*if (activityReplace.getVue().getInformation() != null){ //on affiche une information spécifique s'il y en a une
             throw new AbsentInformationException("Il y a un problème dans la Matrice...");
-        }
+        }*/
 
 
 

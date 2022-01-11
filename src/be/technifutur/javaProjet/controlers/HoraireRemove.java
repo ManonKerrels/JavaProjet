@@ -1,7 +1,10 @@
-package be.technifutur.javaProjet.horaire;
+package be.technifutur.javaProjet.controlers;
 
-import be.technifutur.javaProjet.activités.ActivityType;
-import be.technifutur.javaProjet.activités.ListActivityType;
+import be.technifutur.javaProjet.factory.ActivityType;
+import be.technifutur.javaProjet.factory.ListActivityType;
+import be.technifutur.javaProjet.modeles.Horaire;
+import be.technifutur.javaProjet.vues.HoraireVue;
+import be.technifutur.javaProjet.modeles.Stage;
 
 public class HoraireRemove {
 

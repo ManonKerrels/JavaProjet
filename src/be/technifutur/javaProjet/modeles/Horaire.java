@@ -2,13 +2,12 @@
 //collection et stockage des activités (donner accès aux données) > normalement dans une base de données
 //stocker que des données valides
 
-package be.technifutur.javaProjet.horaire;
+package be.technifutur.javaProjet.modeles;
 
-import be.technifutur.javaProjet.activités.ActivityType;
+import be.technifutur.javaProjet.factory.ActivityType;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
-import java.time.chrono.ChronoLocalDateTime;
 import java.util.Map;
 import java.util.TreeMap;
 

@@ -1,8 +1,8 @@
 //modèle, stockage de 4 infos
 
-package be.technifutur.javaProjet.horaire;
+package be.technifutur.javaProjet.modeles;
 
-import be.technifutur.javaProjet.activités.ActivityType;
+import be.technifutur.javaProjet.factory.ActivityType;
 
 import java.time.LocalDateTime;
 

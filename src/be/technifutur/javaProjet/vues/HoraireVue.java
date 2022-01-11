@@ -1,4 +1,6 @@
-package be.technifutur.javaProjet.horaire;
+package be.technifutur.javaProjet.vues;
+
+import be.technifutur.javaProjet.modeles.Activity;
 
 import java.util.Scanner;
 

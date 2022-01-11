@@ -1,8 +1,8 @@
 //modèle, un peu comme ActivityType (correspond à "Activity" dans le sprint 3)
 
-package be.technifutur.javaProjet.horaire;
+package be.technifutur.javaProjet.modeles;
 
-import be.technifutur.javaProjet.activités.ActivityType;
+import be.technifutur.javaProjet.factory.ActivityType;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
