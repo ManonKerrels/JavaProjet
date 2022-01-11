@@ -21,6 +21,7 @@ public class Main{
         DataStore<Horaire> dataHoraire = new DataStore<>("horaire.ser", Horaire::new);
         Horaire horaire = dataHoraire.getData();
         System.out.println(listActivity.map);
+        //TODO faire passer les données dans la Factory
 
 
         /*ActivityAdd activityAdd = new ActivityAdd();
