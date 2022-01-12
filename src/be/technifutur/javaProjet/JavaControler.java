@@ -21,6 +21,7 @@ public class JavaControler implements JavaNode{
 
     @Override
     public Callable getAction() {
+        System.out.println("JavaControler.getAction");
         Callable result = null; //result pour le getAction de JavaNode
         boolean saisie = false; //booléen qui est d'office en false (on part du principe qu'il faut vérifier si l'action sera vraie ou pas)
         vue.setError(null); //en cas d'erreur, on fait appel au message dans JavaVue

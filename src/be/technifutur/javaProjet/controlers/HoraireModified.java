@@ -9,8 +9,9 @@ import be.technifutur.javaProjet.modeles.Stage;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.concurrent.Callable;
 
-public class HoraireModified {
+public class HoraireModified implements Callable {
 
     private HoraireVue vue;
     private Horaire model;

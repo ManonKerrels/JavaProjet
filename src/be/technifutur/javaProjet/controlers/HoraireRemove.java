@@ -6,7 +6,9 @@ import be.technifutur.javaProjet.modeles.Horaire;
 import be.technifutur.javaProjet.vues.HoraireVue;
 import be.technifutur.javaProjet.modeles.Stage;
 
-public class HoraireRemove {
+import java.util.concurrent.Callable;
+
+public class HoraireRemove implements Callable {
 
     private HoraireVue vue;
     private Horaire model;
