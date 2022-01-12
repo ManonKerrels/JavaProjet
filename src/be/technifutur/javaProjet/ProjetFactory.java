@@ -88,6 +88,7 @@ public class ProjetFactory{
     private Callable getHoraireModified() {
         HoraireModified horaireModified = new HoraireModified();
         horaireModified.setModel(horaireDataStore.getData());
+        horaireModified.setListActivityType(activityDataStore.getData());
         horaireModified.setVue(new HoraireVue());
         return horaireModified;
     }

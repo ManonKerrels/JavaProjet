@@ -8,7 +8,7 @@ import java.time.LocalDateTime;
 
 public class Activity {
 
-    private ActivityType type;
+    private final ActivityType type;
     private String name;
     private LocalDateTime start;
     private LocalDateTime end;
