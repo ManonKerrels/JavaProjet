@@ -38,7 +38,6 @@ public class HoraireModified implements Callable {
 
     public Stage call() {
         int choix = 0;
-        boolean change = false;
         String input = null;
 
         String newName = null;
@@ -58,45 +57,49 @@ public class HoraireModified implements Callable {
             choix = Integer.parseInt(vue.choixChangement());
 
             switch (choix) {
-                case 1:
+                case 1 -> {
                     model.remove(oldName);
                     vue.nameChangement();
                     newName = String.valueOf(model.get(input));
-
-                    if (!newName.equals(oldName) && !newName.isBlank() && change) {
+                    if (!newName.equals(oldName) && !newName.isBlank()) {
                         model.set(newName);
                         activity.setName(newName);
-                        boolean inscription = (vue.inscription().equalsIgnoreCase("O") ? true : false);
+                        boolean inscription = (vue.inscription().equalsIgnoreCase("O"));
                         listActivityType.setRegistration(inscription);
                         vue.afficheActivity(new Activity(type, newName, oldStart, oldEnd));
                     } else {
                         vue.setError("Les noms que vous avez encodés sont les mêmes.");
                     }
-                    break;
-
-                case 2: //TODO suite du change (date et heure de début)
+                }
+                case 2 -> {
                     model.remove(String.valueOf(oldStart));
                     vue.startChangement();
                     newStart = LocalDateTime.parse(model.startChange(), formatter);
-
-                    if (!newStart.equals(oldStart) && change){
+                    if (!newStart.equals(oldStart)) {
                         model.set(String.valueOf(newStart));
                         activity.setStart(newStart);
-                        boolean inscription = (vue.inscription().equalsIgnoreCase("O") ? true : false);
+                        boolean inscription = (vue.inscription().equalsIgnoreCase("O"));
                         listActivityType.setRegistration(inscription);
-                        vue.afficheActivity(new Activity(type, newName, oldStart, oldEnd));
-                    } else{
-                        vue.setError("Les dates que vous avez encodées sont les mêmes.");
+                        vue.afficheActivity(new Activity(type, oldName, newStart, oldEnd));
+                    } else {
+                        vue.setError("Les dates de début que vous avez encodées sont les mêmes.");
                     }
-                    break;
-
-                case 3:
-                    //TODO suite du change (date et heure de fin)
-                    model.endChange();
-                    break;
-
-                default:
-                    vue.setError("Le choix que vous avez encodé n'est pas disponible.");
+                }
+                case 3 -> {
+                    model.remove(String.valueOf(oldEnd));
+                    vue.endChangement();
+                    newEnd = LocalDateTime.parse(model.endChange(), formatter);
+                    if (!newEnd.equals(oldEnd)){
+                        model.set(String.valueOf(newEnd));
+                        activity.setEnd(newEnd);
+                        boolean inscription = (vue.inscription().equalsIgnoreCase("O"));
+                        listActivityType.setRegistration(inscription);
+                        vue.afficheActivity(new Activity(type, oldName, oldStart, newEnd));
+                    } else {
+                        vue.setError("Les dates de fin que vous avez encodées sont les mêmes.");
+                    }
+                }
+                default -> vue.setError("Le choix que vous avez encodé n'est pas disponible.");
             }
         } else {
             vue.setError("Cette activité n'existe pas dans notre base de données.");

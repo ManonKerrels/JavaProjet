@@ -101,7 +101,12 @@ public class HoraireVue {
     }
 
     public String startChangement() {
-        System.out.println("Veuillez encoder les nouvelles date et heure auxquelles vous désirez encoder votre activité : ");
+        System.out.println("Veuillez encoder les nouvelles date et heure de début auxquelles vous désirez encoder votre activité : ");
+        return input.nextLine();
+    }
+
+    public String endChangement() {
+        System.out.println("Veuillez encoder les nouvelles date et heure de fin auxquelles vous désirez encoder votre activité : ");
         return input.nextLine();
     }
 }

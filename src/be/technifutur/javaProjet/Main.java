@@ -18,7 +18,6 @@ public class Main{
                 action = toto.getAction();
             }catch (NumberFormatException e){
                 throw new AbsentInformationException("Il y a un problème dans la Matrice..."); //on affiche une erreur s'il y en a une
-                //e.printStackTrace();
             }
         }
 

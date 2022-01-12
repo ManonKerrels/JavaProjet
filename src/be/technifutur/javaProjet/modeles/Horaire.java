@@ -39,7 +39,8 @@ public class Horaire implements Serializable {
         return null;
     }
 
-    public void endChange() {
+    public CharSequence endChange() {
+        return null;
     }
 
 

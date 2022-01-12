@@ -27,6 +27,8 @@ public class Activity {
     public void setStart(LocalDateTime start) {this.start = start;}
 
     public LocalDateTime getEnd() {return end;}
+    public void setEnd(LocalDateTime end) {this.end = end;}
+
     public ActivityType getType() {return type;}
 
 
