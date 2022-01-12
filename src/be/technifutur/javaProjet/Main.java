@@ -23,8 +23,6 @@ public class Main{
 
         System.out.println("Vous êtes sorti(e) de la Matrice !");
 
-
-
         projetFactory.activityDataStore.save();
         projetFactory.horaireDataStore.save();
     }
