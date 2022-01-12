@@ -52,35 +52,32 @@ public class HoraireModified implements Callable {
             LocalDateTime oldStart = activity.getStart();
             LocalDateTime oldEnd = activity.getEnd();
             ActivityType type = activity.getType();
-            Activity activity = new Activity(type, oldName, oldStart, oldEnd);
 
             choix = Integer.parseInt(vue.choixChangement());
 
             switch (choix) {
                 case 1 -> {
                     model.remove(oldName);
-                    vue.nameChangement();
-                    newName = String.valueOf(model.get(input));
+                    newName = vue.nameChangement();
                     if (!newName.equals(oldName) && !newName.isBlank()) {
-                        model.set(newName);
                         activity.setName(newName);
                         boolean inscription = (vue.inscription().equalsIgnoreCase("O"));
-                        listActivityType.setRegistration(inscription);
-                        vue.afficheActivity(new Activity(type, newName, oldStart, oldEnd));
+                        Activity activity = model.add(type, newName, oldStart, oldEnd);
+                        vue.afficheActivity(activity);
                     } else {
                         vue.setError("Les noms que vous avez encodés sont les mêmes.");
                     }
                 }
                 case 2 -> {
                     model.remove(String.valueOf(oldStart));
-                    vue.startChangement();
-                    newStart = LocalDateTime.parse(model.startChange(), formatter);
+                    newStart = LocalDateTime.parse(vue.startChangement(), formatter);
                     if (!newStart.equals(oldStart)) {
                         model.set(String.valueOf(newStart));
                         activity.setStart(newStart);
                         boolean inscription = (vue.inscription().equalsIgnoreCase("O"));
                         listActivityType.setRegistration(inscription);
-                        vue.afficheActivity(new Activity(type, oldName, newStart, oldEnd));
+                        Activity activity = model.add(type, oldName, newStart, oldEnd);
+                        vue.afficheActivity(activity);
                     } else {
                         vue.setError("Les dates de début que vous avez encodées sont les mêmes.");
                     }
@@ -88,13 +85,14 @@ public class HoraireModified implements Callable {
                 case 3 -> {
                     model.remove(String.valueOf(oldEnd));
                     vue.endChangement();
-                    newEnd = LocalDateTime.parse(model.endChange(), formatter);
+                    newEnd = LocalDateTime.parse(vue.getEnd(), formatter);
                     if (!newEnd.equals(oldEnd)){
                         model.set(String.valueOf(newEnd));
                         activity.setEnd(newEnd);
                         boolean inscription = (vue.inscription().equalsIgnoreCase("O"));
                         listActivityType.setRegistration(inscription);
-                        vue.afficheActivity(new Activity(type, oldName, oldStart, newEnd));
+                        Activity activity = model.add(type, oldName, oldStart, newEnd);
+                        vue.afficheActivity(activity);
                     } else {
                         vue.setError("Les dates de fin que vous avez encodées sont les mêmes.");
                     }

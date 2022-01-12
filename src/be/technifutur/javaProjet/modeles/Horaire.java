@@ -22,9 +22,10 @@ public class Horaire implements Serializable {
     public void set(String name) {this.name = name;}
 
 
-    public void add(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
+    public Activity add(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
         Activity activity = new Activity(type, name, start, end);
         horaire.put(name.toUpperCase(), activity);
+        return activity;
     }
 
     /*public void change(ActivityType type, String name, LocalDateTime start, LocalDateTime end) {
