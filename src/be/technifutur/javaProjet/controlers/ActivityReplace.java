@@ -26,7 +26,6 @@ public class ActivityReplace implements Callable {
 
     @Override
     public Object call() throws Exception {
-        boolean change = false;
 
         String oldValue = vue.oldActivityType(); //association de l'oldValue à la partie de la vue qui le concerne
         String confirmString = vue.confirmationActivityType(oldValue); //association de la confirmation à la partie de la vue qui le concerne

@@ -31,13 +31,13 @@ public class HoraireVue {
 
     public String getStart(){
         System.out.println("À quelles date et heure souhaitez-vous encoder le début de votre activité ? ");
-        System.out.println("Veuillez encoder sous le format suivant : 12-01-1897 10:0:0 ");
+        System.out.println("Veuillez encoder sous le format suivant : 12/01/1897 10:00 ");
         return input.nextLine();
     }
 
     public String getEnd(){
         System.out.println("Quels seraient le jour et l'heure de fin de votre activité ?");
-        System.out.println("Veuillez encoder sous le format suivant : 12-01-1897 12:0:0 ");
+        System.out.println("Veuillez encoder sous le format suivant : 12/01/1897 12:00 ");
         return input.nextLine();
     }
 

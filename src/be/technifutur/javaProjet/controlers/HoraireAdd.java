@@ -17,7 +17,7 @@ public class HoraireAdd implements Callable {
     private Horaire model;
     private ListActivityType listActivityType;
 
-    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy H:m:s");
+    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm");
 
     public void setVue(HoraireVue vue) {this.vue = vue;}
     public void setModel(Horaire model) {this.model = model;}

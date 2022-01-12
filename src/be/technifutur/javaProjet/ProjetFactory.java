@@ -11,12 +11,10 @@ import be.technifutur.javaProjet.modeles.Horaire;
 import be.technifutur.javaProjet.vues.ActivityVue;
 import be.technifutur.javaProjet.vues.HoraireVue;
 import be.technifutur.laboJava.serialization.DataStore;
-import com.sun.jdi.AbsentInformationException;
 
 import java.util.concurrent.Callable;
 
 public class ProjetFactory{
-    public ActivityReplace getActivityReplace;
     DataStore<ListActivityType> activityDataStore = new DataStore<>("test.ser", ListActivityType::new); //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
     DataStore<Horaire> horaireDataStore = new DataStore<>("horaire.ser", Horaire::new);
 
@@ -72,7 +70,7 @@ public class ProjetFactory{
         HoraireAdd horaireAdd = new HoraireAdd();
         horaireAdd.setModel(horaireDataStore.getData());
         horaireAdd.setVue(new HoraireVue());
-        horaireAdd.setListActivityType(new ListActivityType());
+        horaireAdd.setListActivityType(activityDataStore.getData());
         return horaireAdd;
     }
 
@@ -82,7 +80,7 @@ public class ProjetFactory{
         HoraireRemove horaireRemove = new HoraireRemove();
         horaireRemove.setModel(horaireDataStore.getData());
         horaireRemove.setVue(new HoraireVue());
-        horaireRemove.setListActivityType(new ListActivityType());
+        horaireRemove.setListActivityType(activityDataStore.getData());
         return horaireRemove;
     }
 
