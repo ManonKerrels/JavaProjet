@@ -10,7 +10,7 @@ public class Main{
     public static void main(String[] args) throws Exception{
         ProjetFactory projetFactory = new ProjetFactory();
         JavaControler toto = projetFactory.getControllerPrincipal();
-        Callable<Object> action= toto.getAction();
+        Callable action= toto.getAction();
 
         while (action != null){
             try{

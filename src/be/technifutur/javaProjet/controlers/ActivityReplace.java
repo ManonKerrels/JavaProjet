@@ -15,13 +15,9 @@ public class ActivityReplace implements Callable {
         this.vue = vue;
     }
 
-    public ActivityVue getVue() {return vue;}
-
     public void setModel(ListActivityType model) {
         this.model = model;
     }
-
-    public ListActivityType getModel() {return model;}
 
 
     @Override
@@ -30,9 +26,9 @@ public class ActivityReplace implements Callable {
         String oldValue = vue.oldActivityType(); //association de l'oldValue à la partie de la vue qui le concerne
         String confirmString = vue.confirmationActivityType(oldValue); //association de la confirmation à la partie de la vue qui le concerne
         String newValue = vue.replaceActivityType(); //association de la newValue à la partie de la vue qui le concerne
-        boolean confirmation = (confirmString.equalsIgnoreCase("O")?true:false); //transformation d'un String en booléen
+        boolean confirmation = (confirmString.equalsIgnoreCase("O")); //transformation d'un String en booléen
         ActivityType activityType; //déclaration d'une variable de type ActivityType
-        boolean inscription = (vue.inscription().equalsIgnoreCase("O")?true:false); //idem
+        boolean inscription = (vue.inscription().equalsIgnoreCase("O")); //idem
         vue.setError(null); //message d'erreur mis à la valeur null
         vue.setInformation(null); //idem message d'information
 
