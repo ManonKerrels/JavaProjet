@@ -2,6 +2,8 @@
 
 package be.technifutur.javaProjet.factory;
 
+import be.technifutur.javaProjet.modeles.Horaire;
+
 import java.io.Serializable;
 import java.util.Map;
 import java.util.TreeMap;
@@ -9,8 +11,8 @@ import java.util.TreeMap;
 public class ListActivityType implements Serializable {
 
     public Map<String, ActivityType> map = new TreeMap<>();
-    private String name;
-    private boolean inscription;
+    public String name;
+    public boolean inscription;
 
     public ActivityType addActivityType(String name, boolean registrationRequired){
         ActivityType activityType = new ActivityType(name, registrationRequired);
@@ -25,4 +27,6 @@ public class ListActivityType implements Serializable {
     public void setName(String name) {this.name = name;}
 
     public void setRegistration(boolean inscription) {this.inscription = inscription;}
+
+    public Horaire getHoraire() {return this.getHoraire();}
 }

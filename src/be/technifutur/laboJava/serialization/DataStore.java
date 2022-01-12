@@ -4,11 +4,11 @@ import java.io.*;
 import java.util.ServiceLoader;
 import java.util.function.Supplier;
 
-public class DataStore<D extends Serializable> { //classe qui va permettre d'enregistrer ce qu'on fait
+public class DataStore<D> { //classe qui va permettre d'enregistrer ce qu'on fait
 
     //3 attributs privés
     private final Supplier<D> supplier;
-    private String file;
+    private final String file;
     private D data;
 
     //méthode publique pour fournir un résultat

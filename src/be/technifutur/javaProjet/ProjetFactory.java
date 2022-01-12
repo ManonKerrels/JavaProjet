@@ -11,12 +11,15 @@ import be.technifutur.javaProjet.modeles.Horaire;
 import be.technifutur.javaProjet.vues.ActivityVue;
 import be.technifutur.javaProjet.vues.HoraireVue;
 import be.technifutur.laboJava.serialization.DataStore;
+import be.technifutur.laboJava.serialization.DataType;
 
 import java.util.concurrent.Callable;
 
 public class ProjetFactory{
-    DataStore<ListActivityType> activityDataStore = new DataStore<>("test.ser", ListActivityType::new); //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
-    DataStore<Horaire> horaireDataStore = new DataStore<>("horaire.ser", Horaire::new);
+    //création de l'objet DataStore qui va permettre d'enregistrer ce qu'on fait
+    DataStore<DataType> activityDataStore = new DataStore<DataType>("test.ser", DataType::new);
+    private final ListActivityType listActivityType = activityDataStore.getData().getListActivityType();
+    private final Horaire horaire = activityDataStore.getData().getHoraire();
 
     //fonction utilitaire pour créer des Items
     private Item createItem(String name, Callable action){
@@ -41,7 +44,7 @@ public class ProjetFactory{
     public Item getItemActivityAdd(){return createItem("Ajouter une activité", getActivityAdd());}
     private Callable getActivityAdd() {
         ActivityAdd activityAdd = new ActivityAdd();
-        activityAdd.setModel(activityDataStore.getData());
+        activityAdd.setModel(listActivityType);
         activityAdd.setVue(new ActivityVue());
         return activityAdd;
     }
@@ -50,7 +53,7 @@ public class ProjetFactory{
     private JavaNode getItemActivityRemove() {return createItem("Supprimer une activité", getActivityRemove());}
     private Callable getActivityRemove() {
         ActivityRemove activityRemove = new ActivityRemove();
-        activityRemove.setModel(activityDataStore.getData());
+        activityRemove.setModel(listActivityType);
         activityRemove.setVue(new ActivityVue());
         return activityRemove;
     }
@@ -59,7 +62,7 @@ public class ProjetFactory{
     private JavaNode getItemActivityReplace() {return createItem("Modifier une activité", getActivityReplace());}
     private Callable getActivityReplace() {
         ActivityReplace activityReplace = new ActivityReplace();
-        activityReplace.setModel(activityDataStore.getData());
+        activityReplace.setModel(listActivityType);
         activityReplace.setVue(new ActivityVue());
         return activityReplace;
     }
@@ -68,27 +71,27 @@ public class ProjetFactory{
     private JavaNode getItemHoraireAdd() {return createItem("Ajouter un horaire", getHoraireAdd());}
     private Callable getHoraireAdd() {
         HoraireAdd horaireAdd = new HoraireAdd();
-        horaireAdd.setModel(horaireDataStore.getData());
+        horaireAdd.setModel(horaire);
         horaireAdd.setVue(new HoraireVue());
-        horaireAdd.setListActivityType(activityDataStore.getData());
+        horaireAdd.setListActivityType(listActivityType);
         return horaireAdd;
     }
 
     //HoraireRemove
-    private JavaNode getItemHoraireRemove() {return createItem("Supprimer un horaire", (Callable) getHoraireRemove());}
-    private Object getHoraireRemove() {
+    private JavaNode getItemHoraireRemove() {return createItem("Supprimer un horaire", getHoraireRemove());}
+    private Callable getHoraireRemove() {
         HoraireRemove horaireRemove = new HoraireRemove();
-        horaireRemove.setModel(horaireDataStore.getData());
+        horaireRemove.setModel(horaire);
         horaireRemove.setVue(new HoraireVue());
-        horaireRemove.setListActivityType(activityDataStore.getData());
+        horaireRemove.setListActivityType(listActivityType);
         return horaireRemove;
     }
 
     private JavaNode getItemHoraireModified() {return createItem("Modifier un horaire", getHoraireModified());}
     private Callable getHoraireModified() {
         HoraireModified horaireModified = new HoraireModified();
-        horaireModified.setModel(horaireDataStore.getData());
-        horaireModified.setListActivityType(activityDataStore.getData());
+        horaireModified.setModel(horaire);
+        horaireModified.setListActivityType(listActivityType);
         horaireModified.setVue(new HoraireVue());
         return horaireModified;
     }
@@ -123,8 +126,10 @@ public class ProjetFactory{
 
     public JavaControler getControllerPrincipal() {
         JavaModel menuPrincipal = getMenuPrincipal(); //appel à la méthode getMenuPrincipal
-        JavaControler javaControler = createMenu(menuPrincipal); //appel à la méthode précédente pour créer un menu
-        return javaControler;
+        return createMenu(menuPrincipal);
     }
 
+    public DataStore<DataType> getDataStore() {
+        return activityDataStore;
+    }
 }

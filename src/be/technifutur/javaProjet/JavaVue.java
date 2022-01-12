@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class JavaVue {
 
     //attributs privés pointant sur System.in
-    private Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
     private String error = null;
 
     public void setError(String message){
@@ -29,8 +29,7 @@ public class JavaVue {
             System.out.println("Il y a une erreur : "+error); //si une erreur est présente, on va afficher de quel type
         }
         System.out.println("Choisissez ce que vous désirez effectuer dans ce menu : ");
-        String choix = input.nextLine(); //le choix est saisi grâce à un Scanner
-        return choix; //on retourne ce choix
+        return input.nextLine(); //on retourne ce choix
 
     }
 

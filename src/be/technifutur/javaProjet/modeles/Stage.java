@@ -26,13 +26,4 @@ public class Stage implements Serializable {
 
     public String getName() {return name;}
     public void setName(String name) {this.name = name;}
-
-    public ActivityType getType() {return type;}
-    public void setType(ActivityType type) {this.type = type;}
-
-    public LocalDateTime getStart(){return start;}
-    public void setStart(LocalDateTime start) {this.start = start;}
-
-    public LocalDateTime getEnd() {return end;}
-    public void setEnd(LocalDateTime end) {this.end = end;}
 }

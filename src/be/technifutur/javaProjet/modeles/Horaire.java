@@ -13,8 +13,8 @@ import java.util.TreeMap;
 
 public class Horaire implements Serializable {
 
-    private Map<String, Activity> horaire = new TreeMap<>();
-    private String name;
+    private final Map<String, Activity> horaire = new TreeMap<>();
+    public String name;
 
 
 
@@ -33,16 +33,8 @@ public class Horaire implements Serializable {
         horaire.replace(name, activity);
     }*/
 
-    public void remove(String name) {horaire.remove(name.toUpperCase());}
-
-    public CharSequence startChange() {
-        LocalDateTime localDateTime;
-        return null;
+    public String remove(String name) {horaire.remove(name.toUpperCase());
+        return name;
     }
-
-    public CharSequence endChange() {
-        return null;
-    }
-
 
 }

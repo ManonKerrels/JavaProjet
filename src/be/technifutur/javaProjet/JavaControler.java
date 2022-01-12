@@ -43,7 +43,7 @@ public class JavaControler implements JavaNode{
             } catch (NumberFormatException e){
                 vue.setError((choix+1)+" n'est pas un nombre vous permettant d'accéder à une option.");
             }
-        } while(saisie == false);
+        } while(!saisie);
         vue.setError(null);
         return result;
     }

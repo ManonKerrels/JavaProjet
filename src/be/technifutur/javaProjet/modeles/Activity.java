@@ -4,9 +4,10 @@ package be.technifutur.javaProjet.modeles;
 
 import be.technifutur.javaProjet.factory.ActivityType;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Activity {
+public class Activity implements Serializable {
 
     private final ActivityType type;
     private String name;

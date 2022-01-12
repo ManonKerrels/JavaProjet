@@ -5,7 +5,7 @@ import be.technifutur.javaProjet.factory.ActivityType;
 import java.util.Scanner;
 
 public class ActivityVue {
-    private Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
     private String error = null;
     private String information = null;
 
@@ -28,22 +28,20 @@ public class ActivityVue {
     }
 
     public String replaceActivityType(){ //nom de la nouvelle activité dans ActivityReplace
-        System.out.printf("Veuillez afficher le nouveau nom à encoder : ");
+        System.out.print("Veuillez afficher le nouveau nom à encoder : ");
         String newValue = input.nextLine();
         return newValue.trim();
     }
 
     public String oldActivityType(){ //Vieille activité à modifier dans ActivityReplace
         System.out.println("Veuillez encoder l'activité que vous désirez modifier dans notre base de données : ");
-        String oldValue = input.nextLine().trim();
-        return oldValue;
+        return input.nextLine().trim();
     }
 
     public String confirmationActivityType(String oldValue){ //confirmation du choix d'activité à modifier dans ActivityReplace
         System.out.println("Êtes-vous certain(e) de vouloir remplacer l'activité "+oldValue+" ?");
         System.out.println("Encodez O pour Oui, et N pour Non.");
-        String choix = input.nextLine();
-        return choix;
+        return input.nextLine();
     }
 
     public String inscription() { //suite de l'ajout d'activité, demande d'inscription ou non
@@ -65,11 +63,7 @@ public class ActivityVue {
         this.error = error;
     } //message en cas d'erreur
 
-    public String getError() {return error;}
-
     public void setInformation(String information) {this.information = information;} //message en cas d'information
-
-    public String getInformation() {return information;}
 
 
 }

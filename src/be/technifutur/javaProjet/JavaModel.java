@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public class JavaModel implements Serializable {
     //attributs privés
-    private ArrayList<JavaNode> javaNodeArrayList = new ArrayList<>();
-    private String name;
+    private final ArrayList<JavaNode> javaNodeArrayList = new ArrayList<>();
+    private final String name;
 
     public JavaModel(String name) {this.name = name;}
 

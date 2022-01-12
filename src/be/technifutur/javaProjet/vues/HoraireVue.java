@@ -5,7 +5,7 @@ import be.technifutur.javaProjet.modeles.Activity;
 import java.util.Scanner;
 
 public class HoraireVue {
-    private Scanner input = new Scanner(System.in);
+    private final Scanner input = new Scanner(System.in);
     private String error;
     private String information;
 
@@ -105,8 +105,8 @@ public class HoraireVue {
         return input.nextLine();
     }
 
-    public String endChangement() {
+    public void endChangement() {
         System.out.println("Veuillez encoder les nouvelles date et heure de fin auxquelles vous désirez encoder votre activité : ");
-        return input.nextLine();
+        input.nextLine();
     }
 }
